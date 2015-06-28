@@ -2,6 +2,8 @@
 
 Clojurescript app for identification of the snails in the UK
 
+[ ![Codeship Status for lacogubik/snailfinder](https://codeship.com/projects/1b269d80-001e-0133-9b09-3279d33192fa/status?branch=master)](https://codeship.com/projects/88267)
+
 ## Overview
 
 FIXME: Write a paragraph about the library/project and highlight its goals.
