@@ -1,6 +1,6 @@
 # snailfinder
 
-FIXME: Write a one-line description of your library/project.
+Clojurescript app for identification of the snails in the UK
 
 ## Overview
 
