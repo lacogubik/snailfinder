@@ -28,7 +28,8 @@
   [cursor _]
   (om/component
     (dom/div nil
-      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)} "Find a snail")
+      (dom/h2 nil "Find your snail")
+      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key) :href "#" :className "btn btn-primary"} "Let's get started!")
       (dom/br nil)
       (dom/a #js{:onClick   #(do
                               (om/update! cursor [:current :page] :snail)
