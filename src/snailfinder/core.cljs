@@ -13,7 +13,8 @@
 (defn home-component
       [cursor _]
       (om/component
-        (dom/button #js {:onClick #(om/update! cursor [:current :page] :snail-key)} "Find a snail")))
+        (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)} "Find a snail")
+        ))
 
 (defn main-component
   [cursor _]

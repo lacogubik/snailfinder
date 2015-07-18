@@ -1,2 +1,7 @@
-/* some style */
+.snails-key__question {
+    font-weight: bold;
+}
 
+.snails-key__answer {
+    margin-right: 1rem;
+}
