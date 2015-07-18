@@ -20,15 +20,13 @@
   [cursor _]
     (om/component
       (dom/div
-        (println cursor)
-        (case (get-in cursor [:current :page])
+        #js{:className "container"}
+        (dom/div #js{:className "row"}
+                 (dom/div #js{:className "col-sm-12"}
+                          (case (get-in cursor [:current :page])
                       :home (om/build home-component cursor)
                       :snail-key (om/build snail-key-view cursor)
-              (om/build home-component cursor)
-
-
-          )
-        )))
+              (om/build home-component cursor)))))))
 
 (om/root
   (fn [data owner]
