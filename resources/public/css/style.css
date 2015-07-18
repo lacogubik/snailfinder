@@ -1,3 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-header {
+    background: #6a952a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.page-header h1 {
+    font-family: 'Poiret One', cursive;
+    font-size: 2em;
+    margin: 0;
+    padding: 1em 0;
+    text-align: center;
+}
+
 .snails-key__question {
     font-weight: bold;
 }
