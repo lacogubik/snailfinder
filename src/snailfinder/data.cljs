@@ -3,8 +3,9 @@
 
 (defonce app-state (atom {:current {
                                     :page :home
+                                    :question :c1
                                     }}))
 
 (defn app-state-cursor
       []
-      (om/ref-cursor (om/root-cursor app-state)))
+      (om/root-cursor app-state))

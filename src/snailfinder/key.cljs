@@ -1,10 +1,11 @@
 (ns snailfinder.key)
 
-(def ^:private snail-key-flat
-  {
-   :c1   {
-          :question " Is there an external shell? [Generic picture of a slug (N) and snail (Y)]"
-          :children {:ce1 {:answer "No" :image ""} :c2 {:answer "Yes" :image ""}}
+(defonce snail-key-flat
+  {:c1   {:question " Is there an external shell? [Generic picture of a slug (N) and snail (Y)]"
+          :children {:ce1 {:answer "No"
+                           :image  ""}
+                     :c2  {:answer "Yes"
+                           :image  ""}}
           :path     []
           :type     :question
           }
