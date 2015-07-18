@@ -17,13 +17,18 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
-  :cljsbuild {
+  :cljsbuild {:test-commands {
+                              "unit" ["phantomjs"
+                                      "phantom/repl.js"
+                                      "phantom/unit-test.js"
+                                      "phantom/unit-test.html"]
+                              }
               :builds [
-                       ;{:id           "test"
-                       ; :source-paths ["src" "test"]
-                       ; :compiler     {:output-to     "resources/test/compiled.js"
-                       ;                :optimizations :whitespace
-                       ;                :pretty-print  true}}
+                       {:id           "test"
+                        :source-paths ["src" "test"]
+                        :compiler     {:output-to     "resources/test/compiled.js"
+                                       :optimizations :whitespace
+                                       :pretty-print  true}}
                        {:id           "dev"
                         :source-paths ["src"]
 
