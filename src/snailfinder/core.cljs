@@ -14,9 +14,12 @@
   [cursor _]
   (om/component
     (dom/nav #js{:className "navbar navbar-default"}
-           (dom/div #js{:className "container-fluid"}
-                    (dom/div #js{:className "navbar-header"}
-                             (dom/div #js{:className "navbar-brand"} "Snail Finder"))))))
+             (dom/div #js{:className "container-fluid"}
+                      (dom/div #js{:className "navbar-header"}
+                               (dom/div #js{:className "navbar-brand"
+                                            :onClick   #(do
+                                                         (om/update! cursor [:current :page] :home)
+                                                         (om/update! cursor [:current :question] :c1))} "Snail Finder"))))))
 
 
 (defn home-component
@@ -41,7 +44,7 @@
     (om/component
 
       (dom/div nil
-               (om/build header nil)
+               (om/build header data)
                (om/build main-component data))))
   app-state
   {:target (. js/document (getElementById "app"))})
