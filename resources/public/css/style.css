@@ -25,5 +25,10 @@ body {
 }
 
 .snails-key__answer {
-    margin-right: 1rem;
+    margin: 0 0 1em;
+}
+
+.key-figure {
+    display: block;
+    width: 100%;
 }
