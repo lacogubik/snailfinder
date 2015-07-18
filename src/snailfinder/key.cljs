@@ -271,7 +271,8 @@
                             :type   :answer
                             }
                      :be1  {
-                            :answer "Cluster of: OXYCHILIDAE x 5 (Aegopinella pura, Nesovitrea hammonis, Aegopinella nitidula, Oxychilus navarricus helveticus, Oxychilus alliarius), and HYGROMIDAE x 7 (Zenobiella subrufescens, Trochulus x 3, Hygromia cinctella and Ashfordia granulata)" :image ""
+                            :answer "Cluster of: OXYCHILIDAE x 5 (Aegopinella pura, Nesovitrea hammonis, Aegopinella nitidula, Oxychilus navarricus helveticus, Oxychilus alliarius), and HYGROMIDAE x 7 (Zenobiella subrufescens, Trochulus x 3, Hygromia cinctella and Ashfordia granulata)"
+                            :images ["img1" "img2" "img3"]
                             :path   [:c1 :c2 :c3 :b1 :b7 :b8]
                             :type   :answer
                             }
@@ -291,7 +292,8 @@
                             :type   :answer
                             }
                      :be5  {
-                            :answer "Cluster of: Punctum pygmaeum (PUNCTIDAE 2), HELICODISCIDAE (one species Lucilla singleyana), and GASTRODONTIDAE (Zonitoides x 2)" :image ""
+                            :answer "Cluster of: Punctum pygmaeum (PUNCTIDAE 2), HELICODISCIDAE (one species Lucilla singleyana), and GASTRODONTIDAE (Zonitoides x 2)"
+                            :images ["img1" "img2" "img3"]
                             :path   [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b11]
                             :type   :answer
                             }
@@ -331,7 +333,8 @@
                             :type   :answer
                             }
                      :be13 {
-                            :answer "Cluster of HYGROMIIDAE: Cernuella x 2, Hygromia limbata, Ponentina subvirescens, Monacha x 2, and also HELICIDAE: Cepaea x 2, Arianta arbustorum, Helix x 2, Cornu aspersum, and Theba pisana" :image ""
+                            :answer "Cluster of HYGROMIIDAE: Cernuella x 2, Hygromia limbata, Ponentina subvirescens, Monacha x 2, and also HELICIDAE: Cepaea x 2, Arianta arbustorum, Helix x 2, Cornu aspersum, and Theba pisana"
+                            :images ["img1" "img2" "img3"]
                             :path   [:c1 :c2 :c3 :b1 :b2 :b5]
                             :type   :answer
                             }
@@ -381,7 +384,8 @@
                             :type   :answer
                             }
                      :ce9  {
-                            :answer "Cluster of Leiostyla anglica & Lauria cylindracea (LAURIIDAE), and VERTIGINIDAE (7 species, not whole family - CHECK WHICH & WITH TOM)" :image ""
+                            :answer "Cluster of Leiostyla anglica & Lauria cylindracea (LAURIIDAE), and VERTIGINIDAE (7 species, not whole family - CHECK WHICH & WITH TOM)"
+                            :images ["img1" "img2" "img3"]
                             :path   [:c1 :c2 :c3 :c4 :c7 :c9 :c18]
                             :type   :answer
                             }
@@ -426,7 +430,8 @@
                             :type   :answer
                             }
                      :ce19 {
-                            :answer "Cluster of PUPILLIDAE family (both 2 species), Lauria sempronii (LAURIIDAE), and VERTIGINIDAE (6 species, not whole family - CHECK WHICH WITH TOM)" :image ""
+                            :answer "Cluster of PUPILLIDAE family (both 2 species), Lauria sempronii (LAURIIDAE), and VERTIGINIDAE (6 species, not whole family - CHECK WHICH WITH TOM)"
+                            :images ["img1" "img2" "img3"]
                             :path   [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17]
                             :type   :answer
                             }
