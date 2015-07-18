@@ -22,12 +22,13 @@
 
 (defn snail-key-view
   [cursor _]
-    (om/component
-      (let [question (get-in cursor [:current :question])
-            q-data (get snail-key-flat question)
-            ]
-             (dom/div #js {:className "snails-key"}
-               (om/build key-question q-data)
-                      (apply dom/ul nil
-                      (om/build-all key-answer (:children q-data)))
-               ))))
+  (om/component
+    (let [question (get-in cursor [:current :question])
+          q-data (get snail-key-flat question)
+          ]
+      (if (= :answer (:type q-data))
+        (dom/p nil (:answer q-data))
+        (dom/div #js {:className "snails-key"}
+                 (om/build key-question q-data)
+                 (apply dom/ul nil
+                        (om/build-all key-answer (:children q-data))))))))
