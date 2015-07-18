@@ -1,5 +1,5 @@
 node ID,node text,type,node app text,node image (if only one),answer 1 ID,answer 1 text,answer 1 image,answer 2 ID,answer 2 text,answer 2 image,parent path
-A1,Is the shell taller than it is wide (i.e. long and thin) or round and flat / “globular” [Generic long and thin Ena montana vs. round flat / globular Arianta arbustorum],question,What is the shape of the shell?,,A2,Long & Thin,,A3,Round / Globular,,"C1, C2"
+A1,Is the shell taller than it is wide (i.e. long and thin) or round and flat / globular [Generic long and thin Ena montana vs. round flat / globular Arianta arbustorum],question,What is the shape of the shell?,,A2,Long & Thin,,A3,Round / Globular,,"C1, C2"
 A2,Does the mouth have teeth or not? [Picture of Gulella io with teeth vs. generic Subulinidae],question,Does the mouth have teeth?,,AE2,Teeth,,AE3,No Teeth,,"C1, C2, A1"
 A3, Is the shell a pyramid shape or more flat? [insert picture of Kaliella barrakporensis vs a generic mix of Helicodiscidae / Pleurodiscidae / Gastrodontidae Hothouse alien species],question,Is the shell like a pyramid or flatter?,,A4,Flat,,AE1,Pyramid,,"C1, C2, A1"
 A4,Is the shell bigger than 3mm wide and long or smaller than that? [Insert generic pictures of flat snails with one bigger / wider than the others plus a ruler],question,Is the shell bigger than 3mm wide?,,A5,Bigger,,A6,Smaller,,"C1, C2, A1, A3"
@@ -24,7 +24,7 @@ B9,Is the shell ribbed or not? [Generic picture of exaggerated ribs of Discus ro
 B10,Which of these two snails looks like your one? [Pictures of Paralaoma servilis and Discus rotundatus],question,,,BE2,(picture paralaoma),,BE3,(picture discus rotundatus),,"C1, C2, C3, B1, B7, B8, B9"
 B11,Does the shell have a small or a wide umbilicus? [Pictures of generic wide vs small umbilici],question,,,BE4,Small Umbilicus,,BE5,Wide Umbilicus,,"C1, C2, C3, B1, B7, B8, B9"
 B12,"Has the shell got a sharp keel and does it look a bit like a flying saucer? [Picture of Helicigona lapicida, and generic picture of a rounder shell like a Oxychilius cellarius]",question,,,BE15,Yes,,B13,No,,"C1, C2, C3, B1, B7"
-B13,Is the shell clearly stripey or not? [Picture of Helicella itala vs less obvious “stripes” of Candidula / smooth Oxychilius cellarius],question,,,BE16,Stripey,,B14,Not Stripey,,"C1, C2, C3, B1, B7, B12"
+B13,Is the shell clearly stripey or not? [Picture of Helicella itala vs less obvious stripes of Candidula / smooth Oxychilius cellarius],question,,,BE16,Stripey,,B14,Not Stripey,,"C1, C2, C3, B1, B7, B12"
 B14,Is the shell hairy and tightly coiled or not? [Picture of hairy Helicodonta obvoluta and not hairy Oxychilus / Candidula],question,,,BE14,Hairy,,B15,Not Hairy,,"C1, C2, C3, B1, B7, B12, B13"
 B15,Is the shell flat and smooth or ribbed? [Pictures of smooth Oxychilus and ribbed Candidula],question,,,BE6,Smooth,,BE7,Ribbed,,"C1, C2, C3, B1, B7, B12, B13, B14"
 BE1,"Cluster of: OXYCHILIDAE x 5 (Aegopinella pura, Nesovitrea hammonis, Aegopinella nitidula, Oxychilus navarricus helveticus, Oxychilus alliarius), and HYGROMIDAE x 7 (Zenobiella subrufescens, Trochulus x 3, Hygromia cinctella and Ashfordia granulata)",cluster,,,,,,,,,"C1, C2, C3, B1, B7, B8"
@@ -43,17 +43,17 @@ BE13,"Cluster of HYGROMIIDAE: Cernuella x 2, Hygromia limbata, Ponentina subvire
 BE14,Helicodonta obvoluta (HELICODONTIDAE),species,,,,,,,,,"C1, C2, C3, B1, B7, B12, B13, B14"
 BE15,Helicigona lapicida (HELICIDAE),species,,,,,,,,,"C1, C2, C3, B1, B7, B12"
 BE16,Helicella itala (HYGROMIIDAE),species,,,,,,,,,"C1, C2, C3, B1, B7, B12, B13"
-C1, Is there an external shell? [Generic picture of a slug (N) and snail (Y)],question,,,CE1,No,c1-ce1-slugs.jpg,C2,Yes,c1-c2-snails.jpg,none
-C2,"Are you in a greenhouse or hothouse, and did you find your snail there? [Picture for a greenhouse, and picture for not]",question,,,A1,Hothouse,,C3,Not Hothouse,,C1
-C3," Is the shell taller than it is wide (i.e. long and thin), or round and ""globular"" looking? [pictures of generic long and thin (Ena montana), and round flat / globular (Arianta arbustorum)]",question,What is the shape of the shell?,,B1,Round,,C4,Long & Thin,,"C1, C2"
+C1,Is there an external shell? [Generic picture of a slug (N) and snail (Y)],question,Can you see a shell?,,CE1,No,c1-ce1-slugs.jpg,C2,Yes,c1-c2-snails.jpg,none
+C2,"Are you in a greenhouse or hothouse, and did you find your snail there? [Picture for a greenhouse, and picture for not]",question,Are you in a greenhouse or hothouse?,,A1,Hothouse,,C3,Not Hothouse,,C1
+C3," Is the shell taller than it is wide (i.e. long and thin), or round and globular looking? [pictures of generic long and thin (Ena montana), and round flat / globular (Arianta arbustorum)]",question,What is the shape of the shell?,,B1,Round,,C4,Long & Thin,,"C1, C2"
 C4,Does the shell point to the left (sinistral) or to the right (dextral)? [Use pictures of Ena montana for right / dextral and Cochlodina laminata for left / sinistral],question,Which way does the mouth point?,,C5,Left,,C7,Right,,"C1, C2, C3"
-C5,"Is the shell large and needle-like, or very small and dumpy? [Picture of generic Clausiliidae and generic Verigo angustior / pusilla]",question,,,CE20,Large & Needle-like,,C6,Small & Dumpy,,"C1, C2, C3, C4"
+C5,"Is the shell large and needle-like, or very small and dumpy? [Picture of generic Clausiliidae and generic Verigo angustior / pusilla]",question,Is the shell very tall and thin?,,CE20,Large & Needle-like,,C6,Small & Dumpy,,"C1, C2, C3, C4"
 C6,Does it have teeth? [Pictures of Vertigo angustior (no teeth) & Vertigo pusilla (teeth),question,Does the mouth have teeth?,,CE14,No teeth,,CE15,Has teeth,,"C1, C2, C3, C4, C5"
-C7," Is the shell more than 3mm high or less than 3mm high? [Generic picture of right leaning long and thin shell one smaller and the other larger, plus ruler]",question,,,C9,Less than 3mm,,C8,More than 3mm,,"C1, C2, C3, C4"
-C8,Does the mouth have teeth or not [generic teeth or no teeth picture] - same page as for Q7,question,,,C10,No teeth,,CE4,Has teeth,,"C1, C2, C3, C4, C7"
-C9,Does the mouth have teeth or not [generic teeth or no teeth picture],question,Is the shell like a pyramid or flatter?,,C16,No teeth,,C18,Has teeth,,"C1, C2, C3, C4, C7"
-C10,Does the mouth have an operculum? [Draw generic picture of Pomatias elegans with operculum and snail with no operculum],question,Is the shell bigger than 3mm wide?,,CE5,Has operculum,,C11,No operculum,,"C1, C2, C3, C4, C7, C8"
-C11,Does the shell have few flattened whorls or not? [picture of Oxyloma elegans and a generic picture of a mix of Cochlicopidae / Enidae / Cochlicellidae],question,Is the shell ribbed?,,CE6,Few flattened whorls,,C12,No whorls,,"C1, C2, C3, C4, C7, C8, C10"
+C7," Is the shell more than 3mm high or less than 3mm high? [Generic picture of right leaning long and thin shell one smaller and the other larger, plus ruler]",question,Is the shell more than 3mm high?,,C9,Less than 3mm,,C8,More than 3mm,,"C1, C2, C3, C4"
+C8,Does the mouth have teeth or not [generic teeth or no teeth picture] - same page as for Q7,question,Does the mouth have teeth?,,C10,No teeth,,CE4,Has teeth,,"C1, C2, C3, C4, C7"
+C9,Does the mouth have teeth or not [generic teeth or no teeth picture],question,Does the mouth have teeth?,,C16,No teeth,,C18,Has teeth,,"C1, C2, C3, C4, C7"
+C10,Does the mouth have an operculum? [Draw generic picture of Pomatias elegans with operculum and snail with no operculum],question,,,CE5,Has operculum,,C11,No operculum,,"C1, C2, C3, C4, C7, C8"
+C11,Does the shell have few flattened whorls or not? [picture of Oxyloma elegans and a generic picture of a mix of Cochlicopidae / Enidae / Cochlicellidae],question,,,CE6,Few flattened whorls,,C12,No whorls,,"C1, C2, C3, C4, C7, C8, C10"
 C12,Does the mouth have a thickened lip or not? [picture of thick lip of Ena montana vs Cochlicopidae / Cochlicellidae small lip],question,,,C14,No thick lip,,C13,Thick lip,,"C1, C2, C3, C4, C7, C8, C10, C11"
 C13, Is the shell big or small? [pictures of large Ena montana and small Merdigera obscura],question,,,CE11,Small,,CE12,Large,,"C1, C2, C3, C4, C7, C8, C10, C11, C12"
 C14,Is the shell smooth and glossy or not? [generic pictures of Cochlicopidae vs Cochlicellidae],question,,,CE7,Smooth & glossy,,C15,Not,,"C1, C2, C3, C4, C7, C8, C10, C11, C12"

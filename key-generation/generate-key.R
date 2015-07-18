@@ -1,3 +1,4 @@
+rm(list=ls())
 df <- read.csv('List of all nodes by type tabular.csv', stringsAsFactors = FALSE)
 
 # first some munging to get format of each column exactly right!
