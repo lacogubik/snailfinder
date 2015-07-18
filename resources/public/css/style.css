@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+h1, h2 {
+    font-family: 'Poiret One', cursive;
+}
+
 .navbar {
     background: #6a952a;
     color: #fff;
@@ -31,4 +35,9 @@ body {
 .key-figure {
     display: block;
     width: 100%;
+}
+
+.btn-primary {
+    background: #882653;
+    color: #fff;
 }
