@@ -23,7 +23,7 @@
                      :b15 { :question "Is the shell flat and smooth or ribbed? [Pictures of smooth Oxychilus and ribbed Candidula]" :children {:be6 {:answer "Smooth" :image ""} :be7 {:answer "Ribbed" :image ""} } :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14] :type :question}
                      :c1 { :question " Is there an external shell? [Generic picture of a slug (N) and snail (Y)]" :children {:ce1 {:answer "No" :image "c1-ce1-slugs.jpg"} :c2 {:answer "Yes" :image "c1-c2-snails.jpg"} } :path [] :type :question}
                      :c2 { :question "Are you in a greenhouse or hothouse, and did you find your snail there? [Picture for a greenhouse, and picture for not]" :children {:a1 {:answer "Hothouse" :image ""} :c3 {:answer "Not Hothouse" :image ""} } :path [:c1] :type :question}
-                     :c3 { :question " Is the shell taller than it is wide (i.e. long and thin), or round and looking? [pictures of generic long and thin (Ena montana), and round flat / globular (Arianta arbustorum)]" :children {:b1 {:answer "Round" :image ""} :c4 {:answer "Long & Thin" :image ""} } :path [:c1 :c2] :type :question}
+                     :c3 { :question " Is the shell taller than it is wide (i.e. long and thin), or round and "globular" looking? [pictures of generic long and thin (Ena montana), and round flat / globular (Arianta arbustorum)]" :children {:b1 {:answer "Round" :image ""} :c4 {:answer "Long & Thin" :image ""} } :path [:c1 :c2] :type :question}
                      :c4 { :question "Does the shell point to the left (sinistral) or to the right (dextral)? [Use pictures of Ena montana for right / dextral and Cochlodina laminata for left / sinistral]" :children {:c5 {:answer "Left" :image ""} :c7 {:answer "Right" :image ""} } :path [:c1 :c2 :c3] :type :question}
                      :c5 { :question "Is the shell large and needle-like, or very small and dumpy? [Picture of generic Clausiliidae and generic Verigo angustior / pusilla]" :children {:ce20 {:answer "Large & Needle-like" :image ""} :c6 {:answer "Small & Dumpy" :image ""} } :path [:c1 :c2 :c3 :c4] :type :question}
                      :c6 { :question "Does it have teeth? [Pictures of Vertigo angustior (no teeth) & Vertigo pusilla (teeth)" :children {:ce14 {:answer "No teeth" :image ""} :ce15 {:answer "Has teeth" :image ""} } :path [:c1 :c2 :c3 :c4 :c5] :type :question}
@@ -39,44 +39,44 @@
                      :c16 { :question "Is the shell extremely narrow (no wider than 1.5mm) or fatter than that? [picture of Ceciliodes acicula and a generic fatter pupilla muscorum]" :children {:c17 {:answer "Fatter" :image ""} :ce16 {:answer "Narrow" :image ""} } :path [:c1 :c2 :c3 :c4 :c7 :c9] :type :question}
                      :c17 { :question "Is the shell more like a narrow cylinder with vertical ridges or slightly fatter? [generic pictures of Acicula fusca or generic fatter pupilla muscorum]" :children {:ce17 {:answer "Narrow" :image ""} :ce19 {:answer "Fatter" :image ""} } :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16] :type :question}
                      :c18 { :question "Is the shell very small and slender or not? [generic picture of Carychium tridentatum vs lauriidae]" :children {:ce8 {:answer "Small & Slender" :image ""} :ce9 {:answer "Not" :image ""} } :path [:c1 :c2 :c3 :c4 :c7 :c9] :type :question}
-                     :ae1 { :answer "Kaliella barrakporensis (CHRONIDAE)" :image "" :path [:c1 :c2 :a1 :a3] :type :answer}
-                     :ae2 { :answer "Gulella io (STREPTAXIDAE)" :image "" :path [:c1 :c2 :a1 :a2] :type :answer}
-                     :ae3 { :answer "SUBULINIDAE" :image "" :path [:c1 :c2 :a1 :a2] :type :answer}
-                     :ae4 { :answer "Pleurodiscus balmei (PLEURODISCIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a5] :type :answer}
-                     :ae5 { :answer "Zonitoides arboreus (GASTRODONTIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a5] :type :answer}
-                     :ae6 { :answer "Hawaiia minuscula (PRISTILOMATIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a6] :type :answer}
-                     :ae7 { :answer "Helicodiscus parallelus (HELICODISCIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a6] :type :answer}
-                     :be1 { :answer "Cluster of: OXYCHILIDAE x 5 (Aegopinella pura, Nesovitrea hammonis, Aegopinella nitidula, Oxychilus navarricus helveticus, Oxychilus alliarius), and HYGROMIDAE x 7 (Zenobiella subrufescens, Trochulus x 3, Hygromia cinctella and Ashfordia granulata)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8] :type :answer}
-                     :be2 { :answer "Paralaoma servilis (PUNCTIDAE 1)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b10] :type :answer}
-                     :be3 { :answer "Discus rotundatus (DISCIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b10] :type :answer}
-                     :be4 { :answer "PRISTILOMATIDAE" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b11] :type :answer}
-                     :be5 { :answer "Cluster of: Punctum pygmaeum (PUNCTIDAE 2), HELICODISCIDAE (one species Lucilla singleyana), and GASTRODONTIDAE (Zonitoides x 2)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b11] :type :answer}
-                     :be6 { :answer "Oxychilus cellarius & Oxychilus draparnaudi (OXYCHILIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14 :b15] :type :answer}
-                     :be7 { :answer "Profiles of Candidula intersecta & Candidula gigaxii (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14 :b15] :type :answer}
-                     :be8 { :answer "Acanthinula aculeata (VALLONIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5 :b6] :type :answer}
-                     :be9 { :answer "Spermodea lamellata (VALLONIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5 :b6] :type :answer}
-                     :be10 { :answer "Trochoidea elegans (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3] :type :answer}
-                     :be11 { :answer "Pyramidula pusilla (PYRAMIDULIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3 :b4] :type :answer}
-                     :be12 { :answer "EUCONULIDAE" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3 :b4] :type :answer}
-                     :be13 { :answer "Cluster of HYGROMIIDAE: Cernuella x 2, Hygromia limbata, Ponentina subvirescens, Monacha x 2, and also HELICIDAE: Cepaea x 2, Arianta arbustorum, Helix x 2, Cornu aspersum, and Theba pisana" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5] :type :answer}
-                     :be14 { :answer "Helicodonta obvoluta (HELICODONTIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14] :type :answer}
-                     :be15 { :answer "Helicigona lapicida (HELICIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12] :type :answer}
-                     :be16 { :answer "Helicella itala (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13] :type :answer}
-                     :ce1 { :answer "SLUG! Exit" :image "" :path [:c1] :type :answer}
-                     :ce4 { :answer "Profiles of Azeca goodalli (AZECIDAE) or Abida secale (CHONDRINIDAE) to choose from" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8] :type :answer}
-                     :ce5 { :answer "POMATIIDAE / Pomatias elegans" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10] :type :answer}
-                     :ce6 { :answer "SUCCINEIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11] :type :answer}
-                     :ce7 { :answer "COCHLICOPIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14] :type :answer}
-                     :ce8 { :answer "ELLOBIIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c18] :type :answer}
-                     :ce9 { :answer "Cluster of Leiostyla anglica & Lauria cylindracea (LAURIIDAE), and VERTIGINIDAE (7 species, not whole family - CHECK WHICH & WITH TOM)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c18] :type :answer}
-                     :ce10 { :answer "Cochlicella barbara (COCHLICELLIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14 :c15] :type :answer}
-                     :ce11 { :answer "Merdigera obscura (ENIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c13] :type :answer}
-                     :ce12 { :answer "Ena montana (ENIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c13] :type :answer}
-                     :ce13 { :answer "Cochlicella acuta (COCHLICELLIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14 :c15] :type :answer}
-                     :ce14 { :answer "Vertigo angustior (VERTIGINIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c5 :c6] :type :answer}
-                     :ce15 { :answer "Vertigo pusilla (VERTIGINIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c5 :c6] :type :answer}
-                     :ce16 { :answer "Cecilioides acicula (FERUSSACIIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16] :type :answer}
-                     :ce17 { :answer "Acicula fusca (ACICULIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17] :type :answer}
-                     :ce19 { :answer "Cluster of PUPILLIDAE family (both 2 species), Lauria sempronii (LAURIIDAE), and VERTIGINIDAE (6 species, not whole family - CHECK WHICH WITH TOM)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17] :type :answer}
-                     :ce20 { :answer "CLAUSILIIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c5] :type :answer}
+                     :ae1 { :answer "Kaliella barrakporensis (CHRONIDAE)" :image "" :path [:c1 :c2 :a1 :a3] :type :species}
+                     :ae2 { :answer "Gulella io (STREPTAXIDAE)" :image "" :path [:c1 :c2 :a1 :a2] :type :species}
+                     :ae3 { :answer "SUBULINIDAE" :image "" :path [:c1 :c2 :a1 :a2] :type :family}
+                     :ae4 { :answer "Pleurodiscus balmei (PLEURODISCIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a5] :type :species}
+                     :ae5 { :answer "Zonitoides arboreus (GASTRODONTIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a5] :type :species}
+                     :ae6 { :answer "Hawaiia minuscula (PRISTILOMATIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a6] :type :species}
+                     :ae7 { :answer "Helicodiscus parallelus (HELICODISCIDAE)" :image "" :path [:c1 :c2 :a1 :a3 :a4 :a6] :type :species}
+                     :be1 { :answer "Cluster of: OXYCHILIDAE x 5 (Aegopinella pura, Nesovitrea hammonis, Aegopinella nitidula, Oxychilus navarricus helveticus, Oxychilus alliarius), and HYGROMIDAE x 7 (Zenobiella subrufescens, Trochulus x 3, Hygromia cinctella and Ashfordia granulata)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8] :type :cluster}
+                     :be2 { :answer "Paralaoma servilis (PUNCTIDAE 1)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b10] :type :species}
+                     :be3 { :answer "Discus rotundatus (DISCIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b10] :type :species}
+                     :be4 { :answer "PRISTILOMATIDAE" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b11] :type :family}
+                     :be5 { :answer "Cluster of: Punctum pygmaeum (PUNCTIDAE 2), HELICODISCIDAE (one species Lucilla singleyana), and GASTRODONTIDAE (Zonitoides x 2)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b8 :b9 :b11] :type :cluster}
+                     :be6 { :answer "Oxychilus cellarius & Oxychilus draparnaudi (OXYCHILIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14 :b15] :type :species}
+                     :be7 { :answer "Profiles of Candidula intersecta & Candidula gigaxii (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14 :b15] :type :cluster}
+                     :be8 { :answer "Acanthinula aculeata (VALLONIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5 :b6] :type :species}
+                     :be9 { :answer "Spermodea lamellata (VALLONIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5 :b6] :type :species}
+                     :be10 { :answer "Trochoidea elegans (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3] :type :species}
+                     :be11 { :answer "Pyramidula pusilla (PYRAMIDULIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3 :b4] :type :species}
+                     :be12 { :answer "EUCONULIDAE" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b3 :b4] :type :family}
+                     :be13 { :answer "Cluster of HYGROMIIDAE: Cernuella x 2, Hygromia limbata, Ponentina subvirescens, Monacha x 2, and also HELICIDAE: Cepaea x 2, Arianta arbustorum, Helix x 2, Cornu aspersum, and Theba pisana" :image "" :path [:c1 :c2 :c3 :b1 :b2 :b5] :type :cluster}
+                     :be14 { :answer "Helicodonta obvoluta (HELICODONTIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13 :b14] :type :species}
+                     :be15 { :answer "Helicigona lapicida (HELICIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12] :type :species}
+                     :be16 { :answer "Helicella itala (HYGROMIIDAE)" :image "" :path [:c1 :c2 :c3 :b1 :b7 :b12 :b13] :type :species}
+                     :ce1 { :answer "SLUG! Exit" :image "" :path [:c1] :type :cluster}
+                     :ce4 { :answer "Profiles of Azeca goodalli (AZECIDAE) or Abida secale (CHONDRINIDAE) to choose from" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8] :type :cluster}
+                     :ce5 { :answer "POMATIIDAE / Pomatias elegans" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10] :type :species}
+                     :ce6 { :answer "SUCCINEIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11] :type :family}
+                     :ce7 { :answer "COCHLICOPIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14] :type :family}
+                     :ce8 { :answer "ELLOBIIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c18] :type :family}
+                     :ce9 { :answer "Cluster of Leiostyla anglica & Lauria cylindracea (LAURIIDAE), and VERTIGINIDAE (7 species, not whole family - CHECK WHICH & WITH TOM)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c18] :type :cluster}
+                     :ce10 { :answer "Cochlicella barbara (COCHLICELLIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14 :c15] :type :species}
+                     :ce11 { :answer "Merdigera obscura (ENIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c13] :type :species}
+                     :ce12 { :answer "Ena montana (ENIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c13] :type :species}
+                     :ce13 { :answer "Cochlicella acuta (COCHLICELLIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11 :c12 :c14 :c15] :type :species}
+                     :ce14 { :answer "Vertigo angustior (VERTIGINIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c5 :c6] :type :species}
+                     :ce15 { :answer "Vertigo pusilla (VERTIGINIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c5 :c6] :type :species}
+                     :ce16 { :answer "Cecilioides acicula (FERUSSACIIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16] :type :species}
+                     :ce17 { :answer "Acicula fusca (ACICULIDAE)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17] :type :species}
+                     :ce19 { :answer "Cluster of PUPILLIDAE family (both 2 species), Lauria sempronii (LAURIIDAE), and VERTIGINIDAE (6 species, not whole family - CHECK WHICH WITH TOM)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17] :type :cluster}
+                     :ce20 { :answer "CLAUSILIIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c5] :type :family}
                      })

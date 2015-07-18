@@ -12,7 +12,7 @@ df$answer.2.ID <- tolower(df$answer.2.ID)
 df$answer.2.ID <- paste(':', df$answer.2.ID, sep='')
 
 # define type
-df['type'] <- sapply(df$answer.1.text, function(txt) if(txt==''){return('answer')}else{return('question')})
+# df['type'] <- sapply(df$answer.1.text, function(txt) if(txt==''){return('answer')}else{return('question')})
 
 # define path by parents
 df$parent.path <- tolower(df$parent.path)
@@ -24,7 +24,7 @@ df[df$node.ID==':c1','parent.path'] <- ''
 
 # subdivide in questions and answers
 questions <- df[df$type=='question',]
-answers <- df[df$type=='answer',]
+answers <- df[df$type!='question',]
 
 # question clojure key format
 
@@ -65,7 +65,7 @@ printAnswer <- function(xr){
     ':answer "', xr$node.text, '" ', # will be node.app.text in final version
     ':image "', xr$node.image..if.only.one., '" ',
     ':path [', xr$parent.path, '] ',
-    ':type :answer}', sep=''
+    ':type :', xr$type, '}', sep=''
   )
   return(string)
 }
