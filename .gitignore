@@ -2,6 +2,8 @@
 figwheel_server.log
 pom.xml
 *jar
+*.iml
+/.idea/
 /lib/
 /classes/
 /out/

@@ -18,22 +18,28 @@
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
   :cljsbuild {
-    :builds [{:id "dev"
-              :source-paths ["src"]
+              :builds [
+                       ;{:id           "test"
+                       ; :source-paths ["src" "test"]
+                       ; :compiler     {:output-to     "resources/test/compiled.js"
+                       ;                :optimizations :whitespace
+                       ;                :pretty-print  true}}
+                       {:id           "dev"
+                        :source-paths ["src"]
 
-              :figwheel { :on-jsload "snailfinder.core/on-js-reload" }
+                        :figwheel     {:on-jsload "snailfinder.core/on-js-reload"}
 
-              :compiler {:main snailfinder.core
-                         :asset-path "js/compiled/out"
-                         :output-to "resources/public/js/compiled/snailfinder.js"
-                         :output-dir "resources/public/js/compiled/out"
-                         :source-map-timestamp true }}
-             {:id "min"
-              :source-paths ["src"]
-              :compiler {:output-to "resources/public/js/compiled/snailfinder.js"
-                         :main snailfinder.core
-                         :optimizations :advanced
-                         :pretty-print false}}]}
+                        :compiler     {:main                 snailfinder.core
+                                       :asset-path           "js/compiled/out"
+                                       :output-to            "resources/public/js/compiled/snailfinder.js"
+                                       :output-dir           "resources/public/js/compiled/out"
+                                       :source-map-timestamp true}}
+                       {:id           "min"
+                        :source-paths ["src"]
+                        :compiler     {:output-to     "resources/public/js/compiled/snailfinder.js"
+                                       :main          snailfinder.core
+                                       :optimizations :advanced
+                                       :pretty-print  false}}]}
 
   :figwheel {
              ;; :http-server-root "public" ;; default and assumes "resources" 
