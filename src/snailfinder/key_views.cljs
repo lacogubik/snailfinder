@@ -7,13 +7,14 @@
 (enable-console-print!)
 
 (defn key-answer
-  [child _]
-  (println "child" child)
-  (om/component
-    (dom/button #js {:type      "button"
-                     :className "btn btn-default snails-key__answer"
-                     :onClick   #(om/update! (app-state-cursor) [:current :question] (first child))} (get-in child [1 :answer]))))
-
+      [child _]
+      (println "child" child)
+      (om/component
+        (dom/button #js {:type "button"
+                         :className "btn btn-default snails-key__answer"
+                         :onClick #(om/update!  (app-state-cursor) [:current :question] (first child))}
+                    (dom/img #js {:className "key-figure" :src (str "images/key/" (get-in child [1 :image])) })
+                    (dom/span nil (get-in child [1 :answer])))))
 
 (defn key-question
   [cursor _]
@@ -30,6 +31,6 @@
       (if (= :answer (:type q-data))
         (dom/p nil (:answer q-data))
         (dom/div #js {:className "snails-key"}
-          (om/build key-question q-data)
-          (apply dom/ul nil
-            (om/build-all key-answer (:children q-data))))))))
+           (om/build key-question q-data)
+           (apply dom/div nil
+                  (om/build-all key-answer (:children q-data))))))))
