@@ -16,19 +16,19 @@
 
 
 (defn family-component
-  [snail cursor _]
+  [family cursor _]
   (om/component
     (dom/div nil
       (dom/div nil "back button")
       (dom/div nil "title")
-        (apply dom/div nil (map #(dom/li nil %) (:images snail)) )
-      (println "snail:" snail)
-      (dom/div nil (str "description:" (:answer snail))))))
+        (apply dom/div nil (map #(dom/li nil %) (:images family)) )
+      (println "snail:" family)
+      (dom/div nil (str "description:" (:answer family))))))
 
 
 (defn family-view
   [cursor _]
   (om/component
     (dom/div #js {:className "snails-key"}
-      (let [snail (snail-key-flat (get-in cursor [:current :question]))]
-        (om/build (partial family-component snail) cursor)))))
+      (let [family (snail-key (get-in cursor [:current :question]))]
+        (om/build (partial family-component family) cursor)))))

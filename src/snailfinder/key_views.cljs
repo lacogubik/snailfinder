@@ -24,7 +24,7 @@
   [cursor _]
   (om/component
     (let [question (get-in cursor [:current :question])
-          q-data (get snail-key-flat question)
+          q-data (get snail-key question)
           ]
       (if (= :answer (:type q-data))
         (dom/p nil (:answer q-data))

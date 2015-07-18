@@ -22,5 +22,5 @@
   [cursor _]
   (om/component
     (dom/div #js {:className "snails-key"}
-      (let [snail (snail-key-flat (get-in cursor [:current :question]))]
+      (let [snail (snail-key (get-in cursor [:current :question]))]
         (om/build (partial snail-component snail) cursor)))))
