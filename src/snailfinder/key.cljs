@@ -3,7 +3,7 @@
 (def snail-key-flat {
                      :a1   {
                             :question "Is the shell taller than it is wide (i.e. long and thin) or round and flat / “globular” [Generic long and thin Ena montana vs. round flat / globular Arianta arbustorum]"
-                            :children {:a2 {:answer "Long & Thin" :image ""} :a3 {:answer "Round / Globular" :image ""}}
+                            :children {:a2 {:answer "Long & Thin" :image "c1-ce1-slugs.jpg"} :a3 {:answer "Round / Globular" :image "c1-c2-snails.jpg"}}
                             :path     [:c1 :c2]
                             :type     :question
                             }
