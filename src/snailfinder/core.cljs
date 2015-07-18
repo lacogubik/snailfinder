@@ -8,13 +8,21 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 
-(defonce app-state (atom {:text "Hello world!"}))
+;; Example interaction
+;; (dom/button #js {:onClick #(js/alert "hello") } "Snail Key"))
+
+(defonce app-state (atom {:snails ["Columella aspera", "Columella edentula"]}))
+
+(defn main-component
+  [cursor _]
+    (om/component
+      (dom/div nil
+        (dom/button #js {:onClick #(js/alert "hello") } "Snail Key"))))
 
 (om/root
   (fn [data owner]
-    (reify om/IRender
-      (render [_]
-        (dom/h1 nil (:text data)))))
+    (om/component
+      (om/build main-component nil)))
   app-state
   {:target (. js/document (getElementById "app"))})
 
@@ -24,4 +32,3 @@
   ;; your application
   ;; (swap! app-state update-in [:__figwheel_counter] inc)
 )
-
