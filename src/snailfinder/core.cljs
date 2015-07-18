@@ -4,7 +4,7 @@
             [snailfinder.data :refer [app-state]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
-            ))
+            [snailfinder.family-view :refer [family-view]]))
 
 (enable-console-print!)
 
@@ -32,7 +32,12 @@
       (dom/br nil)
       (dom/a #js{:onClick   #(do
                               (om/update! cursor [:current :page] :snail)
-                              (om/update! cursor [:current :question] :ae2))} "Snail Page"))))
+                              (om/update! cursor [:current :question] :ae2))} "Snail Page")
+      (dom/br nil)
+      (dom/a #js{:onClick #(do
+                            (om/update! cursor [:current :page] :family)
+                            (om/update! cursor [:current :question] :ce9))} "Family Page"))))
+
 
 (defn main-component
   [cursor _]
@@ -50,6 +55,7 @@
               :home (om/build home-component cursor)
               :snail-key (om/build snail-key-view cursor)
               :snail (om/build snail-view cursor)
+              :family (om/build family-view cursor)
               (om/build home-component cursor)))))
       ;)
       )))
