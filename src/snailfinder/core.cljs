@@ -10,11 +10,19 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 
+(defn header
+  [cursor _]
+  (om/component
+    (dom/nav #js{:className "navbar navbar-default"}
+           (dom/div #js{:className "container-fluid"}
+                    (dom/div #js{:className "navbar-header"}
+                             (dom/div #js{:className "navbar-brand"} "Snail Finder"))))))
+
+
 (defn home-component
-      [cursor _]
-      (om/component
-        (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)} "Find a snail")
-        ))
+  [cursor _]
+  (om/component
+    (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)} "Find a snail")))
 
 (defn main-component
   [cursor _]
@@ -31,7 +39,10 @@
 (om/root
   (fn [data owner]
     (om/component
-      (om/build main-component data)))
+
+      (dom/div nil
+               (om/build header nil)
+               (om/build main-component data))))
   app-state
   {:target (. js/document (getElementById "app"))})
 

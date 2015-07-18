@@ -3,11 +3,13 @@ body {
     padding: 0;
 }
 
-.page-header {
+.navbar {
     background: #6a952a;
     color: #fff;
-    margin: 0;
-    padding: 0;
+}
+
+.navbar-brand {
+    color: #fff !important;
 }
 
 .page-header h1 {
