@@ -28,27 +28,25 @@ answers <- df[df$type=='answer',]
 
 # question clojure key format
 
-# :c1 {
-#   :question "Is there an external shell?"
-#   :image-answer1 ""
-#   :image-answer2 ""
-#   :children [:ce1 "No" :c2 "Yes"]
-#   :path []
-#   :type "question"
-# }
+# :c1   {:question "Is there an external shell? [Generic picture of a slug (N) and snail (Y)]"
+#   :children {
+#     :ce1 {:answer "No" :image  ""} :ce2 {:answer "Yes" :image  ""}
+#      }
+#   :path [] 
+#   :type :question}
 
 printQuestion <- function(xr){
-  if(is.na(xr$answer.1.image)){ xr$answer.1.image <- ' '}
-  if(is.na(xr$answer.2.image)){ xr$answer.2.image <- ' '}
+  if(is.na(xr$answer.1.image)){ xr$answer.1.image <- ''}
+  if(is.na(xr$answer.2.image)){ xr$answer.2.image <- ''}
   
   string <- paste(
     xr$node.ID, ' { ',
     ':question "', xr$node.text, '" ', # will be node.app.text in final version
-    ':image-answer1 "', xr$answer.1.image, '" ',
-    ':image-answer2 "', xr$answer.2.image, '" ',
-    ':children [', xr$answer.1.ID, ' "', xr$answer.1.text, '" ', xr$answer.2.ID, ' "', xr$answer.2.text, '"] ',
+    ':children {', 
+        xr$answer.1.ID, ' {:answer "', xr$answer.1.text, '" :image "', xr$answer.1.image, '"} ',
+        xr$answer.2.ID, ' {:answer "', xr$answer.2.text, '" :image "', xr$answer.2.image, '"} } ',
     ':path [', xr$parent.path, '] ',
-    ':type "question" }', sep=''
+    ':type :question}', sep=''
       )
   return(string)
 }
@@ -67,7 +65,7 @@ printAnswer <- function(xr){
     ':answer "', xr$node.text, '" ', # will be node.app.text in final version
     ':image "', xr$node.image..if.only.one., '" ',
     ':path [', xr$parent.path, '] ',
-    ':type "answer" }', sep=''
+    ':type :answer}', sep=''
   )
   return(string)
 }
