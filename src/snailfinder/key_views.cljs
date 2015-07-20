@@ -28,9 +28,9 @@
   (om/component
     (let [question (get-in cursor [:current :question])
           q-data   (get snail-key-flat question)]
-      (if (= :answer (:type q-data))
-        (dom/p nil (:answer q-data))
+      (if (= :question (:type q-data))
         (dom/div #js {:className "snails-key"}
            (om/build key-question q-data)
            (apply dom/div nil
-                  (om/build-all key-answer (:children q-data))))))))
+                  (om/build-all key-answer (:children q-data))))
+        (dom/p nil (:answer q-data))))))
