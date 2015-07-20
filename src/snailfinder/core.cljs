@@ -45,21 +45,15 @@
   (om/component
     (dom/div
       #js{:className "container"}
-
-      ;(om/component
       (dom/div
-        #js{:className "container"}
-        (dom/div
-          #js{:className "row"}
-          (dom/div #js{:className "col-sm-12"}
-            (case (get-in cursor [:current :page])
-              :home (om/build home-component cursor)
-              :snail-key (om/build snail-key-view cursor)
-              :snail (om/build snail-view cursor)
-              :family (om/build family-view cursor)
-              (om/build home-component cursor)))))
-      ;)
-      )))
+        #js{:className "row"}
+        (dom/div #js{:className "col-sm-12"}
+                 (case (get-in cursor [:current :page])
+                   :home (om/build home-component cursor)
+                   :snail-key (om/build snail-key-view cursor)
+                   :snail (om/build snail-view cursor)
+                   :family (om/build family-view cursor)
+                   (om/build home-component cursor)))))))
 
 (om/root
   (fn [data owner]

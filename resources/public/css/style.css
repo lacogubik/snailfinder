@@ -24,19 +24,6 @@ h1, h2 {
     text-align: center;
 }
 
-.snails-key__question {
-    font-weight: bold;
-}
-
-.snails-key__answer {
-    margin: 0 0 1em;
-}
-
-.key-figure {
-    display: block;
-    width: 100%;
-}
-
 .btn-primary {
     background: #882653;
     color: #fff;
