@@ -9,13 +9,16 @@
 (defn key-answer
   [child _]
   (om/component
-    (dom/div #js{:className "col-sm-12 col-md-6"}
+    (if (= :separator (:type child))
+      (dom/div #js{:className "col-sm-10 col-sm-offset-1 col-md-1"}
+               (dom/p #js{:className "text-center"} (dom/strong nil (:text child))))
+      (dom/div #js{:className "col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-1"}
              (dom/a #js {:className "img-thumbnail"
                          :onClick   #(om/update! (app-state-cursor) [:current :question] (first child))}
                     (dom/img #js {:className "img-responsive"
                                   :src       (str "images/key/" (get-in child [1 :image]))})
                     (dom/h4 #js{:className "text-center"}
-                            (get-in child [1 :answer]))))))
+                            (get-in child [1 :answer])))))))
 
 (defn key-question
   [cursor _]
@@ -35,5 +38,5 @@
                  (dom/div nil
                           (om/build key-question q-data)
                           (apply dom/div #js{:className "row"}
-                                 (om/build-all key-answer (:children q-data))))
+                                 (om/build-all key-answer (interpose {:type :separator :text "OR"} (:children q-data)))))
                  (dom/p nil (:answer q-data)))))))
