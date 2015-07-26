@@ -10,20 +10,20 @@
   [child _]
   (om/component
     (html (if (= :separator (:type child))
-            [:div.col-sm-10.col-sm-offset-1.col-md-1
+            [:div.mdl-cell.mdl-cell--5-col
              [:p.text-center
               [:strong (:text child)]]]
-            [:div.col-sm-10.col-sm-offset-1.col-md-4.col-md-offset-1
-             [:a.img-thumbnail {:on-click #(om/update! (app-state-cursor) [:current :question] (first child))}
+            [:div.mdl-cell.mdl-cell--5-col.mdl-typography--text-center
+             [:a {:on-click #(om/update! (app-state-cursor) [:current :question] (first child))}
               [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
-              [:h4.text-center (get-in child [1 :answer])]]]))))
+              [:button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored (get-in child [1 :answer])]]]))))
 
 
 (defn key-question
   [cursor _]
   (om/component
-    (html [:div.row
-           [:div.col-sm-12
+    (html [:div.mdl-grid
+           [:div.mdl-cell.mdl-cell--12-col
             [:h4 (:question cursor)]]])))
 
 
@@ -32,10 +32,10 @@
   (om/component
     (let [question (get-in cursor [:current :question])
           q-data (get snail-key-flat question)]
-      (html [:div.row
+      (html [:div
              (if (= :question (:type q-data))
                [:div
                 (om/build key-question q-data)
-                [:div.row (for [answer (interpose {:type :separator :text "OR"} (:children q-data))]
+                [:div.mdl-grid (for [answer (:children q-data)]
                                        (om/build key-answer answer))]]
                [:p (:answer q-data)])]))))

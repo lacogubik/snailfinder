@@ -1,30 +1,34 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+/*body {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
 
-h1, h2 {
-    font-family: 'Poiret One', cursive;
-}
+/*h1, h2 {*/
+    /*font-family: 'Poiret One', cursive;*/
+/*}*/
 
-.navbar {
-    background: #6a952a;
-    color: #fff;
-}
+/*.navbar {*/
+    /*background: #6a952a;*/
+    /*color: #fff;*/
+/*}*/
 
-.navbar-brand {
-    color: #fff !important;
-}
+/*.navbar-brand {*/
+    /*color: #fff !important;*/
+/*}*/
 
-.page-header h1 {
-    font-family: 'Poiret One', cursive;
-    font-size: 2em;
-    margin: 0;
-    padding: 1em 0;
-    text-align: center;
-}
+/*.page-header h1 {*/
+    /*font-family: 'Poiret One', cursive;*/
+    /*font-size: 2em;*/
+    /*margin: 0;*/
+    /*padding: 1em 0;*/
+    /*text-align: center;*/
+/*}*/
 
-.btn-primary {
-    background: #882653;
-    color: #fff;
+/*.btn-primary {*/
+    /*background: #882653;*/
+    /*color: #fff;*/
+/*}*/
+
+.img-responsive {
+    width: 100%;
 }
