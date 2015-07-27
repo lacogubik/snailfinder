@@ -15,51 +15,54 @@
 (defn header
   [cursor _]
   (om/component
-    (dom/nav #js{:className "navbar navbar-default"}
-      (dom/div #js{:className "container-fluid"}
-        (dom/div #js{:className "navbar-header"}
-          (dom/div #js{:className "navbar-brand"
-                       :onClick   #(do
-                                    (om/update! cursor [:current :page] :home)
-                                    (om/update! cursor [:current :question] :c1))} "Snail Finder"))))))
+    (dom/header #js{:className "mdl-layout__header"}
+      (dom/div #js{:className "mdl-layout__drawer-button"}
+        (dom/i #js{:className "material-icons"} "menu"))
+      (dom/div #js{:className "mdl-layout__header-row"}
+        (dom/span #js{:className "mdl-layout-title"
+                      :onClick   #(do
+                                   (om/update! cursor [:current :page] :home)
+                                   (om/update! cursor [:current :question] :c1))} "Snail Finder")))))
 
 
 (defn home-component
   [cursor _]
   (om/component
-    (dom/div nil
+    (dom/div #js {:className "mdl-grid"}
+      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
       (dom/h2 nil "Find your snail")
-      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key) :href "#" :className "btn btn-primary"} "Let's get started!")
+      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)
+                  :href "#"
+                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
       (dom/br nil)
-      (dom/a #js{:onClick   #(do
-                              (om/update! cursor [:current :page] :snail)
-                              (om/update! cursor [:current :question] :ae2))} "Snail Page")
+      (dom/a #js{:onClick #(do
+                            (om/update! cursor [:current :page] :snail)
+                            (om/update! cursor [:current :question] :ae2))} "Snail Page")
       (dom/br nil)
       (dom/a #js{:onClick #(do
                             (om/update! cursor [:current :page] :family)
-                            (om/update! cursor [:current :question] :ce9))} "Family Page"))))
+                            (om/update! cursor [:current :question] :ce9))} "Family Page")))))
 
 
 (defn main-component
   [cursor _]
   (om/component
     (dom/div
-      #js{:className "container"}
-      (dom/div
-        #js{:className "row"}
-        (dom/div #js{:className "col-sm-12"}
-                 (case (get-in cursor [:current :page])
-                   :home (om/build home-component cursor)
-                   :snail-key (om/build snail-key-view cursor)
-                   :snail (om/build snail-view cursor)
-                   :family (om/build family-view cursor)
-                   (om/build home-component cursor)))))))
+      #js{:className "mdl-layout__content"}
+      (dom/div #js{:className ""}
+        (dom/div #js{:className ""}
+          (case (get-in cursor [:current :page])
+            :home (om/build home-component cursor)
+            :snail-key (om/build snail-key-view cursor)
+            :snail (om/build snail-view cursor)
+            :family (om/build family-view cursor)
+            (om/build home-component cursor)))))))
 
 (om/root
   (fn [data owner]
     (om/component
 
-      (dom/div nil
+      (dom/div #js{:className "mdl-layout mdl-js-layout mdl-layout--fixed-header"}
         (om/build header data)
         (om/build main-component data)
         )))
