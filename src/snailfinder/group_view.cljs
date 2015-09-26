@@ -16,12 +16,13 @@
     (html [:div
            [:a {:href "#/"} "back button"]
            [:h3 "Your snail could be one of these:"]
-           (for [snail-id (:endpoints group)]
-             [:div.result-list__item
+
+           [:div.endpoint-group(for [snail-id (:endpoints group)]
+             [:div.endpoint-group__item
               [:a {:href (str "#/snail/" (name snail-id))}
                [:img {:src (str "images/endpoint/" (get-in snails [snail-id :image]))
                       :alt (str (get-in snails [snail-id :name]))}]
-               [:span (str (get-in snails [snail-id :name]))]]])])))
+               [:div.endpoint-group__item-label (str (get-in snails [snail-id :name]))]]])]])))
 
 
 (defn group-view

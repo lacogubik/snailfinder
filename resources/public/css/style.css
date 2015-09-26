@@ -18,6 +18,26 @@ span.snail-detail-title {
     width: 100%;
 }
 
+
+.endpoint-group__item {
+		height: 15rem;
+    max-width: 40%;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    padding: 1em;
+}
+
+.endpoint-group .endpoint-group__item a img  {
+  vertical-align: middle;
+  height: 80%;
+}
+
+.endpoint-group__item-label {
+	height: 20%;
+}
+
 .key__question {
     font-size: 1rem;
     font-weight: bold;
