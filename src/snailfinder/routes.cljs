@@ -44,6 +44,8 @@
   (set-current-question! (keyword key)))
 
 
+(defroute "*" [] (set-current-page! :home))
+
 
 (defroute about-path "/about" [] (set-current-page! :about))
 
