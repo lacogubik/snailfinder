@@ -21,10 +21,8 @@
       (dom/div #js{:className "mdl-layout__drawer-button"}
         (dom/i #js{:className "material-icons"} "menu"))
       (dom/div #js{:className "mdl-layout__header-row"}
-        (dom/span #js{:className "mdl-layout-title"
-                      :onClick   #(do
-                                   (om/update! cursor [:current :page] :home)
-                                   (om/update! cursor [:current :question] :c1))} "Snail Finder")))))
+        (dom/a #js{:className "mdl-layout-title"
+                   :href      "#/"} "Snail Finder")))))
 
 
 (defn home-component
@@ -32,19 +30,13 @@
   (om/component
     (dom/div #js {:className "mdl-grid"}
       (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-      (dom/h2 nil "Find your snail")
-      (dom/a #js {
-                  ;:onClick #(om/update! cursor [:current :page] :snail-key)
-                  :href "#/snail-key"
-                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-      (dom/br nil)
-      (dom/a #js{:onClick #(do
-                            (om/update! cursor [:current :page] :snail)
-                            (om/update! cursor [:current :question] :ae2))} "Snail Page")
-      (dom/br nil)
-      (dom/a #js{:onClick #(do
-                            (om/update! cursor [:current :page] :family)
-                            (om/update! cursor [:current :question] :ce9))} "Family Page")))))
+        (dom/h2 nil "Find your snail")
+        (dom/a #js {:href      "#/snail-key/c1"
+                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
+        (dom/br nil)
+        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
+        (dom/br nil)
+        (dom/a #js{:href "#/family/ce9"} "Family Page")))))
 
 
 (defn about-component

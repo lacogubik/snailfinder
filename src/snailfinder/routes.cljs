@@ -23,13 +23,23 @@
 (defroute home-path "/" [] (set-current-page! :home))
 
 
+(defroute snail-key-default-path "/snail-key" []
+  (set-current-page! :snail-key))
+
+
 (defroute snail-key-path "/snail-key/:key" [key]
   (set-current-page! :snail-key)
   (set-current-question! (keyword key)))
 
 
-(defroute snail-key-default-path "/snail-key" []
-  (set-current-page! :snail-key))
+(defroute snail-path "/snail/:key" [key]
+  (set-current-page! :snail)
+  (set-current-question! (keyword key)))
+
+(defroute family-path "/family/:key" [key]
+  (set-current-page! :family)
+  (set-current-question! (keyword key)))
+
 
 
 (defroute about-path "/about" [] (set-current-page! :about))
