@@ -7,6 +7,7 @@
 
 (enable-console-print!)
 
+
 (defn family-component
   [family cursor _]
   (om/component
