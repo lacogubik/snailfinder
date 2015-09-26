@@ -5,6 +5,7 @@
             [snailfinder.data :refer [app-state]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
+            [snailfinder.snails :refer [snails-component]]
             [snailfinder.family-view :refer [family-view]]
             [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
@@ -30,17 +31,19 @@
   [cursor _]
   (om/component
     (dom/div #js {:className "mdl-grid"}
-             (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-                      (dom/h2 nil "Find your snail")
-                      (dom/a #js {:href      "#/snail-key/c1"
-                                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-                      (dom/br nil)
-                      (dom/a #js{:href "#/snail/ae2"} "Snail Page")
-                      (dom/br nil)
-                      (dom/a #js{:href "#/family/ce9"} "Family Page")
-                      (dom/br nil)
-                      (dom/a #js {:href      "#/map"
-                                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")))))
+      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
+        (dom/h2 nil "Find your snail")
+        (dom/a #js {:href      "#/snail-key/c1"
+                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
+        (dom/br nil)
+        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
+        (dom/br nil)
+        (dom/a #js{:href "#/family/ce9"} "Family Page")
+        (dom/br nil)
+        (dom/a #js{:href "#/snails"} "Snails")
+               (dom/a #js {:href      "#/map"
+                           :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")
+        ))))
 
 
 (defn about-component
@@ -51,8 +54,10 @@
 
 (defn main-component
   [cursor _]
-  (om/component
-    (dom/div
+  (reify
+    om/IRender
+    (render [this]
+      (dom/div
       #js{:className "mdl-layout__content"}
       (dom/div #js{:className ""}
         (dom/div #js{:className ""}
@@ -61,14 +66,14 @@
             :home (om/build home-component cursor)
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
+            :snails (om/build snails-component cursor)
             :family (om/build family-view cursor)
             :map (om/build map-view cursor)
-            (om/build home-component cursor)))))))
+            (om/build home-component cursor))))))))
 
 (om/root
   (fn [data owner]
     (om/component
-
       (dom/div #js{:className "mdl-layout mdl-js-layout mdl-layout--fixed-header"}
         (om/build header data)
         (om/build main-component data)

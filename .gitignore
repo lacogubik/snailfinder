@@ -14,3 +14,4 @@ pom.xml
 .repl
 .nrepl-port
 .DS_Store
+.Rhistory
