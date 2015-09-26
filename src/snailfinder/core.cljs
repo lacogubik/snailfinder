@@ -6,6 +6,7 @@
             [snailfinder.key :refer [snail-key-flat]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
+            [snailfinder.snails :refer [snails-component]]
             [snailfinder.family-view :refer [family-view]]
             [snailfinder.routes :as routes]))
 
@@ -44,7 +45,9 @@
         [:a {:href "#/family/ce9"
              :on-click #(do
                           (om/update! cursor [:current :page] :family)
-                          (om/update! cursor [:current :answer] :ce9))} "Family Page"]]])))
+                          (om/update! cursor [:current :answer] :ce9))} "Family Page"]
+      [:br]
+      [:a {:href "#/snails"} "Snails"]]])))
 
 
 (defn about-component
@@ -67,6 +70,7 @@
             :home (om/build home-component cursor)
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
+            :snails (om/build snails-component cursor)
             :family (om/build family-view cursor)
             (om/build home-component cursor))))))))
 

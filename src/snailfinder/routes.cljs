@@ -56,6 +56,11 @@
   (set-current-question! (keyword key))
   (reset-page-title!))
 
+(defroute snails-path "/snails" []
+  (set-current-page! :snails)
+  (reset-page-title!))
+
+
 
 (defroute family-path "/family/:key" [key]
   (set-current-page! :family)
