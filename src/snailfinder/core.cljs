@@ -47,8 +47,10 @@
 
 (defn main-component
   [cursor _]
-  (om/component
-    (dom/div
+  (reify
+    om/IRender
+    (render [this]
+      (dom/div
       #js{:className "mdl-layout__content"}
       (dom/div #js{:className ""}
         (dom/div #js{:className ""}
@@ -58,12 +60,11 @@
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
             :family (om/build family-view cursor)
-            (om/build home-component cursor)))))))
+            (om/build home-component cursor))))))))
 
 (om/root
   (fn [data owner]
     (om/component
-
       (dom/div #js{:className "mdl-layout mdl-js-layout mdl-layout--fixed-header"}
         (om/build header data)
         (om/build main-component data)
