@@ -37,10 +37,10 @@
         [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
          {:href "#/snail-key/c1"} "Let's get started!"]
         [:br]
-        [:a {:href "#/snail/ae2"
+        [:a {:href "#/snail/s1"
              :on-click #(do
                           (om/update! cursor [:current :page] :snail)
-                          (om/update! cursor [:current :answer] :ae2))} "Snail Page"]
+                          (om/update! cursor [:current :answer] :s1))} "Snail Page"]
         [:br]
         [:a {:href "#/family/ce9"
              :on-click #(do

@@ -1,12 +1,19 @@
 (ns ^:figwheel-always snailfinder.snail-view
-  (:require[om.core :as om :include-macros true]
-           [om.dom :as dom :include-macros true]
-           [sablono.core :as html :refer-macros [html]]
-           [snailfinder.snail :refer [snails]]
-           [snailfinder.data :refer [app-state-cursor]]))
+  (:require [clojure.string :refer [capitalize replace]]
+            [om.core :as om :include-macros true]
+            [om.dom :as dom :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
+            [snailfinder.snail :refer [snails]]
+            [snailfinder.data :refer [app-state-cursor]]))
 
 (enable-console-print!)
 
+(defn format-key
+  [key]
+  (->
+    (replace (str key) ":" "")
+    (replace "-" " ")
+    (capitalize)))
 
 (defn snail-component
   [snail cursor _]
@@ -14,10 +21,15 @@
     (html
       [:div
        [:a {:href "#/"} "back button"]
-       (print snail)
-       [:div " "(:name snail)]
-       [:div [:img {:src (str "images/key" (:image snail))
-                    :alt (str (:name snail))}]]])))
+       [:h3 (:common-name snail)]
+       [:div
+        [:img.img-responsive {:src (str "images/key" (:image snail))
+                              :alt (str (:common-name snail))}]]
+       (for [description-item (dissoc snail :common-name :image :map-image :notes)]
+         ^{:key (key description-item)}
+         [:div
+          [:span.snail-detail-title (format-key (str (key description-item)))]
+          [:p ((key description-item) snail)]])])))
 
 
 (defn snail-view
@@ -25,5 +37,5 @@
   (om/component
     (html
       [:div.snails-key
-     (let [snail (snails (get-in cursor [:current :question]))]
-       (om/build (partial snail-component snail) cursor))])))
+       (let [snail (snails (get-in cursor [:current :question]))]
+         (om/build (partial snail-component snail) cursor))])))

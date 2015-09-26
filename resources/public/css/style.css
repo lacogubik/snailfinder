@@ -6,3 +6,6 @@ body {
     width: 100%;
 }
 
+span.snail-detail-title {
+	font-weight: bold;
+}
