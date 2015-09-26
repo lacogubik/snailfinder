@@ -5,6 +5,7 @@
             [snailfinder.data :refer [app-state]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
+            [snailfinder.snails :refer [snails-component]]
             [snailfinder.family-view :refer [family-view]]
             [snailfinder.routes :as routes]))
 
@@ -36,7 +37,10 @@
         (dom/br nil)
         (dom/a #js{:href "#/snail/ae2"} "Snail Page")
         (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")))))
+        (dom/a #js{:href "#/family/ce9"} "Family Page")
+        (dom/br nil)
+        (dom/a #js{:href "#/snails"} "Snails")
+        ))))
 
 
 (defn about-component
@@ -59,6 +63,7 @@
             :home (om/build home-component cursor)
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
+            :snails (om/build snails-component cursor)
             :family (om/build family-view cursor)
             (om/build home-component cursor))))))))
 
