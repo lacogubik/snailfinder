@@ -2,7 +2,8 @@
   (:require [om.core :as om :include-macros true]))
 
 (def app-state (atom {:current {:page     :home
-                                    :question :c1}}))
+                                    :question :c1}
+                      :location nil}))
 
 (defn app-state-cursor
   []
