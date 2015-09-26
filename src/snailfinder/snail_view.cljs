@@ -1,5 +1,5 @@
 (ns ^:figwheel-always snailfinder.snail-view
-  (:require [clojure.string :refer [capitalize replace]]
+  (:require [clojure.string :refer [blank? capitalize replace]]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer-macros [html]]
@@ -26,10 +26,10 @@
         [:img {:src (str "images/endpoint/" (:image snail))
                               :alt (str (:common-name snail))}]]
        (for [description-item (dissoc snail :common-name :image :map-image :notes)]
-         ^{:key (key description-item)}
-         [:div
-          [:span.snail-detail-title (format-key (str (key description-item)))]
-          [:p ((key description-item) snail)]])])))
+         (when-not (blank? (second description-item))
+                     [:div
+                      [:span.snail-detail-title (format-key (str (key description-item)))]
+                      [:p (second description-item)]]))])))
 
 
 (defn snail-view
