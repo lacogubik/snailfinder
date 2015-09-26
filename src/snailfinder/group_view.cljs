@@ -2,7 +2,9 @@
   (:require[om.core :as om :include-macros true]
            [om.dom :as dom :include-macros true]
            [sablono.core :as html :refer-macros [html]]
-           [snailfinder.group :refer [groups]]
+           [snailfinder.snail :refer [snails]]
+           [snailfinder.key :refer [snail-key-flat]]
+           [snailfinder.key-views :refer [snail-key-view]]
            [snailfinder.data :refer [app-state-cursor]]))
 
 (enable-console-print!)
@@ -14,13 +16,13 @@
     (html
       [:div
        [:a {:href "#/"} "back button"]
-       [:div (:name group)]
-       [:img {:src (str "images/endpoint/" (first (:images group)))
-              :alt (str (:name group))}]
-       [:div (str "description: " (:description group))]
-       (for [species (:endpoint group)]
-         [:li [:img {:src (str "images/endpoint/" :image species)
-                     :alt (str (:name species))}]])])))
+       [:h4 "Your snail could be one of these:"]
+       (for [snail-id (:endpoints group)]
+         [:div.result-list__item
+          [:a {:href (str "#/snail/" (name snail-id))}
+           [:img {:src (str "images/endpoint/" (get-in snails [snail-id :image]))
+                     :alt (str (get-in snails [snail-id :name]))}]
+          [:span (str (get-in snails [snail-id :name]))]]])])))
 
 
 (defn group-view
@@ -28,5 +30,5 @@
   (om/component
     (html
       [:div.snails-key
-       (let [group (groups (get-in cursor [:current :question]))]
+       (let [group (snail-key-flat (get-in cursor [:current :question]))]
          (om/build (partial group-list-component group) cursor))])))

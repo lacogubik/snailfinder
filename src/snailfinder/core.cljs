@@ -45,10 +45,10 @@
                           (om/update! cursor [:current :answer] :s1))} "Snail Page"]
         [:br]
         [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored 
-         {:href "#/family/ce9"
+         {:href "#/group/ce8"
              :on-click #(do
                           (om/update! cursor [:current :page] :group)
-                          (om/update! cursor [:current :answer] :ce9))} "Group Page"]
+                          (om/update! cursor [:current :answer] :ce8))} "Group Page"]
       [:br]
       [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
        {:href "#/snails"} "Snails"]

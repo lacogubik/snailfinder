@@ -22,8 +22,8 @@
       [:div
        [:a {:href "#/"} "back button"]
        [:h3 (:common-name snail)]
-       [:div
-        [:img.img-responsive {:src (str "images/endpoint/" (:image snail))
+       [:div.result-list__item
+        [:img {:src (str "images/endpoint/" (:image snail))
                               :alt (str (:common-name snail))}]]
        (for [description-item (dissoc snail :common-name :image :map-image :notes)]
          ^{:key (key description-item)}
