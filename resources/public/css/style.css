@@ -9,3 +9,22 @@ body {
 span.snail-detail-title {
 	font-weight: bold;
 }
+.result-list__item {
+    width: 100%;
+}
+
+.result-list__item img {
+    display: block;
+    width: 100%;
+}
+
+@media screen and (min-width: 50rem) {
+    .result-list__item {
+        float: left;
+        width: 50%;
+    }
+
+    .result-list__item img {
+        max-width: 50%;
+    }
+}
