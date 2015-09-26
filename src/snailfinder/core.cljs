@@ -8,6 +8,7 @@
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.snails :refer [snails-component]]
             [snailfinder.family-view :refer [family-view]]
+            [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
 
 (enable-console-print!)
@@ -42,12 +43,15 @@
                           (om/update! cursor [:current :page] :snail)
                           (om/update! cursor [:current :answer] :s1))} "Snail Page"]
         [:br]
-        [:a {:href "#/family/ce9"
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored 
+         {:href "#/family/ce9"
              :on-click #(do
                           (om/update! cursor [:current :page] :family)
                           (om/update! cursor [:current :answer] :ce9))} "Family Page"]
       [:br]
-      [:a {:href "#/snails"} "Snails"]]])))
+      [:a {:href "#/snails"} "Snails"]]]
+      [:br]
+      [:a {:href "#/map"} "Map"]]])))
 
 
 (defn about-component
@@ -72,6 +76,7 @@
             :snail (om/build snail-view cursor)
             :snails (om/build snails-component cursor)
             :family (om/build family-view cursor)
+            :map (om/build map-view cursor)
             (om/build home-component cursor))))))))
 
 (om/root
