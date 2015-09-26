@@ -2,6 +2,19 @@ body {
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
+.snail-finder__header {
+    background: #fff;
+    margin: 0 auto;
+    max-width: 64rem;
+    padding: 1rem 0;
+}
+
+.snail-finder__logo {
+    display: inline-block;
+    height: auto;
+    width: 169px;
+}
+
 .img-responsive {
     width: 100%;
 }
@@ -44,8 +57,113 @@ span.snail-detail-title {
     line-height: 1.5;
 }
 
+.home-grid {
+    height: 100vh;
+    padding: 0;
+    position: relative;
+}
 
-@media screen and (min-width: 50rem) {
+.home-grid__panel {
+    height: 50vh;
+    margin: 0;
+    position: relative;
+    width: 50%;
+}
+
+.home-grid__panel .mdl-button {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.mdl-button--raised.mdl-button--colored.home-grid__roundel {
+    background: #A23E2E;
+    color: #fff;
+    line-height: 33.333vh;
+}
+
+.home-grid__roundel {
+    border-radius: 50%;
+    height: 33.333vh;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 33.333vh;
+}
+
+.home__snail-key {
+    background: #6A952A;
+}
+
+.home__snail-map {
+    background: #CFAE87;
+}
+
+.home__snails-list {
+    background: #523122;
+    color: #fff;
+}
+
+.home__snail-families {
+    background: #882653;
+    color: #fff;
+}
+
+.home-grid .home__snails-list .mdl-button,
+.home-grid .home__snail-families .mdl-button{
+    color: #fff;
+}
+
+@media screen and (max-width: 48rem) {
+    .home-grid__roundel {
+        left: 50%;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+
+    .home-grid {
+        height: auto;
+    }
+
+    .home-grid__panel {
+        float: left;
+        height: 16rem;
+        width: 33.333%;
+    }
+
+    .home__snail-key {
+        background: url(http://i.huffpost.com/gen/1399033/images/o-SNAIL-facebook.jpg) no-repeat bottom center;
+        background-size: cover;
+        height: 75vh;
+        width: 100%;
+    }
+
+    .home__snail-key .mdl-button {
+        color: #fff;
+        display: inline-block;
+        font-size: 3rem;
+        text-align: left;
+        width: auto;
+    }
+
+    .home__snail-map {
+        clear: left;
+    }
+
+    .home-grid__roundel {
+        height: 25vh;
+        right: 0;
+        top: 40vh;
+        width: 25vh;
+    }
+
+    .mdl-button--raised.mdl-button--colored.home-grid__roundel {
+        line-height: 25vh;
+    }
+
     .result-list__item {
         float: left;
         width: 50%;

@@ -20,40 +20,50 @@
 (defn header
   [cursor _]
   (om/component
-    (html [:header.mdl-layout__header
-           [:div.mdl-layout__drawer-button
-            [:i.material-icons "menu"]]
-           [:div.mdl-layout__header-row
-            [:a.mdl-layout-title {:href "#/"} "Snail Finder"]]])))
-
+    (html
+      [:header.snail-finder__header
+        [:a {:href "/#"}
+        [:img.snail-finder__logo {:src "/images/logo-snail-finder.v1.png"}]]]
+      )
+  ))
 
 (defn home-component
   [cursor _]
   (om/component
-    (html [:div.mdl-grid
-           [:div.mdl-cell.mdl-cell--12-col
-            [:h2 "Find your snail"]
-            [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
-             {:href "#/snail-key/c1"} "Let's get started!"]
-            [:br]
-            [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
-             {:href "#/snail/s1"
-              :on-click #(do
-                           (om/update! cursor [:current :page] :snail)
-                           (om/update! cursor [:current :answer] :s1))} "Snail Page"]
-            [:br]
-            [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
-             {:href "#/group/ce8"
-              :on-click #(do
-                           (om/update! cursor [:current :page] :group)
-                           (om/update! cursor [:current :answer] :ce8))} "Group Page"]
-            [:br]
-            [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
-             {:href "#/snails"} "Snails"]
-            [:br]
-            [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
-             {:href "#/map"} "Map"]]]
-      )))
+
+    (dom/div #js {:className ""}
+      (dom/div #js {:className ""}
+
+        (html
+          [:div.mdl-grid.home-grid
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-key
+           [:a {:href      "#/snail-key/c1"
+                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "I found a snail! What is it?"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-map
+            [:a {:href "#/map"
+               :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Snail Map"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snails-list
+            [:a {:href "#/snails"
+                 :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "All Snails"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-families
+            [:a {:href "#/group/ce8"
+                 :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                 :on-click #(do
+                                            (om/update! cursor [:current :page] :group)
+                                            (om/update! cursor [:current :answer] :ce8))} "Group page"]]
+
+           [:a {:href "#/snail/s1"
+                :className "home-grid__roundel mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                :on-click #(do
+                                           (om/update! cursor [:current :page] :snail)
+                                           (om/update! cursor [:current :answer] :s1))} "Snail page"]
+
+          ])
+        ))))
+
 
 
 (defn about-component
