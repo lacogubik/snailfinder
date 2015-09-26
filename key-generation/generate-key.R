@@ -1,5 +1,6 @@
 rm(list=ls())
-df <- read.csv('List of all nodes by type tabular.csv', stringsAsFactors = FALSE)
+#df <- read.csv('List of all nodes by type tabular.csv', stringsAsFactors = FALSE)
+df <- read.csv('List of all nodes - with endpoints.csv', stringsAsFactors = FALSE)
 
 # first some munging to get format of each column exactly right!
 
@@ -19,6 +20,11 @@ df$answer.2.ID <- paste(':', df$answer.2.ID, sep='')
 df$parent.path <- tolower(df$parent.path)
 df$parent.path <- gsub(", ", " :", df$parent.path)
 df$parent.path <- paste(':', df$parent.path, sep='')
+
+# define enpoint nodes
+df$endpoint.IDs <- tolower(df$endpoint.IDs)
+df$endpoint.IDs <- gsub(", ", " :", df$endpoint.IDs)
+df$endpoint.IDs <- paste(':', df$endpoint.IDs, sep='')
 
 # first node has empty path
 df[df$node.ID==':c1','parent.path'] <- ''
@@ -66,6 +72,7 @@ printAnswer <- function(xr){
     ':answer "', xr$node.text, '" ', # will be node.app.text in final version
     ':image "', xr$node.image..if.only.one., '" ',
     ':path [', xr$parent.path, '] ',
+    ':endpoints [', (if (xr$endpoint.IDs == ":") "" else xr$endpoint.IDs), '] ',
     ':type :', xr$type, '}', sep=''
   )
   return(string)
