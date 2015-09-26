@@ -23,7 +23,7 @@
       (dom/div #js{:className "mdl-layout__drawer-button"}
         (dom/i #js{:className "material-icons"} "menu"))
       (dom/div #js{:className "mdl-layout__header-row"}
-        (dom/a #js{:className "mdl-layout-title"
+        (dom/span #js{:className "mdl-layout-title"
                    :href      "#/"} "Snail Finder")))))
 
 
