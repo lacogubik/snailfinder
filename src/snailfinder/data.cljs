@@ -4,7 +4,8 @@
 (def app-state (atom {:current {:page     :home
                                 :question :c1}
                       :snails  {:query nil}
-                      :location nil}))
+                      :location {:query nil
+                                 :coords nil}}))
 
 
 (defn app-state-cursor

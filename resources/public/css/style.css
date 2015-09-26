@@ -19,6 +19,9 @@ body {
     width: 100%;
 }
 
+span.snail-detail-title {
+	font-weight: bold;
+}
 .result-list__item {
     width: 100%;
 }

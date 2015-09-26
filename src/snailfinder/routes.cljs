@@ -4,7 +4,6 @@
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [secretary.core :as secretary :refer-macros [defroute]]
-            [snailfinder.family :refer [families]]
             [snailfinder.key :refer [snail-key-flat]]
             [snailfinder.data :as data])
   (:import goog.History))
@@ -43,7 +42,7 @@
   (set-current-page! :snail-key)
   (reset-page-title!))
 
-(defroute snail-key-default-path "/map" []
+(defroute map-path "/map" []
   (set-current-page! :map))
 
 
@@ -65,10 +64,10 @@
 
 
 
-(defroute family-path "/family/:key" [key]
-  (set-current-page! :family)
+(defroute group-path "/group/:key" [key]
+  (set-current-page! :group)
   (set-current-question! (keyword key))
-  (set-page-title! (str "Family: " (get-in families [(keyword key) :name]))))
+  (set-page-title! (str "Group: " (get-in snail-key-flat [(keyword key) :name]))))
 
 
 (defroute "*" []
