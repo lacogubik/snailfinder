@@ -14,7 +14,10 @@
              [:p.text-center
               [:strong (:text child)]]]
             [:div.mdl-cell.mdl-cell--5-col.mdl-typography--text-center
-             [:a {:on-click #(om/update! (app-state-cursor) [:current :question] (first child))}
+             [:a {
+                  ;:on-click #(om/update! (app-state-cursor) [:current :question] (first child))
+                  :href (str "#/snail-key/" (name (first child)))
+                  }
               [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
               [:button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored (get-in child [1 :answer])]]]))))
 

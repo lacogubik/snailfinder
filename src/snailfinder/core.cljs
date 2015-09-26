@@ -33,8 +33,9 @@
     (dom/div #js {:className "mdl-grid"}
       (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
       (dom/h2 nil "Find your snail")
-      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)
-                  :href "#"
+      (dom/a #js {
+                  ;:onClick #(om/update! cursor [:current :page] :snail-key)
+                  :href "#/snail-key"
                   :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
       (dom/br nil)
       (dom/a #js{:onClick #(do

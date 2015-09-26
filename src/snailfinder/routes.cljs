@@ -28,9 +28,11 @@
   (set-current-question! (keyword key)))
 
 
+(defroute snail-key-default-path "/snail-key" []
+  (set-current-page! :snail-key))
+
+
 (defroute about-path "/about" [] (set-current-page! :about))
-
-
 
 
 ;; Quick and dirty history configuration.
