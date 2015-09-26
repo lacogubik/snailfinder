@@ -19,30 +19,43 @@
 (defn header
   [cursor _]
   (om/component
-    (dom/header #js{:className "mdl-layout__header"}
-      (dom/div #js{:className "mdl-layout__drawer-button"}
-        (dom/i #js{:className "material-icons"} "menu"))
-      (dom/div #js{:className "mdl-layout__header-row"}
-        (dom/a #js{:className "mdl-layout-title"
-                   :href      "#/"} "Snail Finder")))))
-
+    (html
+      [:header.snail-finder__header
+        [:a {:href "/#"}
+        [:img.snail-finder__logo {:src "/images/logo-snail-finder.v1.png"}]]]
+      )
+  ))
 
 (defn home-component
   [cursor _]
   (om/component
-    (dom/div #js {:className "mdl-grid"}
-      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-        (dom/h2 nil "Find your snail")
-        (dom/a #js {:href      "#/snail-key/c1"
-                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-        (dom/br nil)
-        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/snails"} "Snails")
-               (dom/a #js {:href      "#/map"
-                           :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")
+    (dom/div #js {:className ""}
+      (dom/div #js {:className ""}
+        ;(dom/h2 nil "Find your snail")
+
+        (html
+          [:div.mdl-grid.home-grid
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-key
+           [:a {:href      "#/snail-key/c1"
+                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "I found a snail! What is it?"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-map
+          [:a {:href "#/map"
+               :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Snail Map"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snails-list
+            [:a {:href "#/snails"
+                 :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "All Snails"]]
+
+          [:div.mdl-cell.mdl-cell--2-col.home-grid__panel.home__snail-families
+            [:a {:href "#/family/ce9"
+                 :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Family page"]]
+
+
+           [:a {:href "#/family/ce9"
+                :className "home-grid__roundel mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Snail page"]
+
+          ])
         ))))
 
 
