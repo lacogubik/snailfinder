@@ -3,10 +3,11 @@
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer-macros [html]]
             [snailfinder.data :refer [app-state]]
+            [snailfinder.key :refer [snail-key-flat]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.snails :refer [snails-component]]
-            [snailfinder.family-view :refer [family-view]]
+            [snailfinder.group-view :refer [group-view]]
             [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
 
@@ -30,20 +31,31 @@
 (defn home-component
   [cursor _]
   (om/component
-    (dom/div #js {:className "mdl-grid"}
-      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-        (dom/h2 nil "Find your snail")
-        (dom/a #js {:href      "#/snail-key/c1"
-                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-        (dom/br nil)
-        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/snails"} "Snails")
-               (dom/a #js {:href      "#/map"
-                           :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")
-        ))))
+    (html
+      [:div.mdl-grid
+       [:div.mdl-cell.mdl-cell--12-col
+        [:h2 "Find your snail"]
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+         {:href "#/snail-key/c1"} "Let's get started!"]
+        [:br]
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+         {:href "#/snail/s1"
+             :on-click #(do
+                          (om/update! cursor [:current :page] :snail)
+                          (om/update! cursor [:current :answer] :s1))} "Snail Page"]
+        [:br]
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored 
+         {:href "#/group/ce8"
+             :on-click #(do
+                          (om/update! cursor [:current :page] :group)
+                          (om/update! cursor [:current :answer] :ce8))} "Group Page"]
+      [:br]
+      [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+       {:href "#/snails"} "Snails"]
+      [:br]
+      [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+       {:href "#/map"} "Map"]]]
+      )))
 
 
 (defn about-component
@@ -67,7 +79,7 @@
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
             :snails (om/build snails-component cursor)
-            :family (om/build family-view cursor)
+            :group (om/build group-view cursor)
             :map (om/build map-view cursor)
             (om/build home-component cursor))))))))
 

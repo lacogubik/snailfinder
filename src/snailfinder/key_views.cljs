@@ -14,7 +14,13 @@
              [:p.text-center
               [:strong (:text child)]]]
             [:div.mdl-cell.mdl-cell--2-col-phone.mdl-typography--text-center
-             [:a {:href (str "#/snail-key/" (name (first child)))}
+             [:a {:href (let [child-details (get snail-key-flat (first child))]
+                          (condp = (:type child-details)
+                            :question (str "#/snail-key/" (name (first child)))
+                            :species (str "#/snail/" (name (first child)))
+                            (if (= 1 (count (:endpoints child-details)))
+                              (str "#/snail/" (name (first (:endpoints child-details))))
+                              (str "#/group/" (name (first child))))))}
               [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
               [:span.button-primary (get-in child [1 :answer])]]]))))
 

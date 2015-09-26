@@ -1,14 +1,14 @@
-(ns snailfinder.family)
+(ns snailfinder.group)
 
 
-(def families
+(def groups
   ; can be family or cluster
-  {:be1 {:name "Family 005"
+  {:be1 {:name "Group 005"
          :images ["img1" "img2" "img3"]
          :description "Lorem ipsum..."}
-   :be5 {:name "Family 006"
+   :be5 {:name "Group 006"
          :images ["img1" "img2" "img3"]
          :description "Lorem ipsum..."}
-   :ce9 {:name        "Family 007"
+   :ce9 {:name        "Group 007"
           :images      ["img1" "img2" "img3"]
           :description "Lorem ipsum..."}})
