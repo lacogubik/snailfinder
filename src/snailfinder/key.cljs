@@ -1,7 +1,8 @@
 (ns snailfinder.key)
 
 (def snail-key-flat
-  {:a1   {:question "Is the shell taller than it is wide (i.e. long and thin) or round and flat / globular [Generic long and thin Ena montana vs. round flat / globular Arianta arbustorum]" :children {:a2 {:answer "Long & Thin" :image ""} :a3 {:answer "Round / Globular" :image ""}} :path [:c1 :c2] :type :question}
+  {
+   :a1   {:question "Is the shell taller than it is wide (i.e. long and thin) or round and flat / globular [Generic long and thin Ena montana vs. round flat / globular Arianta arbustorum]" :children {:a2 {:answer "Long & Thin" :image ""} :a3 {:answer "Round / Globular" :image ""}} :path [:c1 :c2] :type :question}
    :a2   {:question "Does the mouth have teeth or not? [Picture of Gulella io with teeth vs. generic Subulinidae]" :children {:ae2 {:answer "Teeth" :image ""} :ae3 {:answer "No Teeth" :image ""}} :path [:c1 :c2 :a1] :type :question}
    :a3   {:question " Is the shell a pyramid shape or more flat? [insert picture of Kaliella barrakporensis vs a generic mix of Helicodiscidae / Pleurodiscidae / Gastrodontidae Hothouse alien species]" :children {:a4 {:answer "Flat" :image ""} :ae1 {:answer "Pyramid" :image ""}} :path [:c1 :c2 :a1] :type :question}
    :a4   {:question "Is the shell bigger than 3mm wide and long or smaller than that? [Insert generic pictures of flat snails with one bigger / wider than the others plus a ruler]" :children {:a5 {:answer "Bigger" :image ""} :a6 {:answer "Smaller" :image ""}} :path [:c1 :c2 :a1 :a3] :type :question}
@@ -25,12 +26,12 @@
    :c1   {:question "Is there an external shell? [Generic picture of a slug (N) and snail (Y)]" :children {:ce1 {:answer "No" :image "C1_CE1_Slugs.jpg"} :c2 {:answer "Yes" :image "C1_C2_Snails.jpg"}} :path [] :type :question}
    :c2   {:question "Are you in a greenhouse or hothouse, and did you find your snail there? [Picture for a greenhouse, and picture for not]" :children {:a1 {:answer "Hothouse" :image ""} :c3 {:answer "Not Hothouse" :image ""}} :path [:c1] :type :question}
    :c3   {:question " Is the shell taller than it is wide (i.e. long and thin), or round and globular looking? [pictures of generic long and thin (Ena montana), and round flat / globular (Arianta arbustorum)]" :children {:b1 {:answer "Round" :image "C3_CB1_RoundAndFat.jpg"} :c4 {:answer "Long & Thin" :image "C3_C4_LongAndThin.jpg"}} :path [:c1 :c2] :type :question}
-   :c4   {:question "Does the shell point to the left (sinistral) or to the right (dextral)? [Use pictures of Ena montana for right / dextral and Cochlodina laminata for left / sinistral]" :children {:c5 {:answer "Left" :image "C4_C5_LongThinSinistralLeft.jpg"} :c7 {:answer "Right" :image ""}} :path [:c1 :c2 :c3] :type :question}
+   :c4   {:question "Does the shell point to the left (sinistral) or to the right (dextral)? [Use pictures of Ena montana for right / dextral and Cochlodina laminata for left / sinistral]" :children {:c5 {:answer "Left" :image "C4_C5_LongThinSinistralLeft.jpg"} :c7 {:answer "Right" :image "C4_C7_LongThinDextralRight.jpg"}} :path [:c1 :c2 :c3] :type :question}
    :c5   {:question "Is the shell large and needle-like, or very small and dumpy? [Picture of generic Clausiliidae and generic Vertigo angustior]" :children {:ce20 {:answer "Large & Needle-like" :image ""} :c6 {:answer "Small & Dumpy" :image ""}} :path [:c1 :c2 :c3 :c4] :type :question}
    :c6   {:question "Does it have teeth? [Pictures of Vertigo angustior (no teeth) & Vertigo pusilla (teeth)" :children {:ce14 {:answer "No teeth" :image ""} :ce15 {:answer "Has teeth" :image ""}} :path [:c1 :c2 :c3 :c4 :c5] :type :question}
    :c7   {:question " Is the shell more than 3mm high or less than 3mm high? [Generic picture of right leaning long and thin shell one smaller and the other larger, plus ruler]" :children {:c9 {:answer "Less than 3mm" :image ""} :c8 {:answer "More than 3mm" :image ""}} :path [:c1 :c2 :c3 :c4] :type :question}
-   :c8   {:question "Does the mouth have teeth or not [generic teeth or no teeth picture] - same page as for Q7" :children {:c10 {:answer "No teeth" :image ""} :ce4 {:answer "Has teeth" :image ""}} :path [:c1 :c2 :c3 :c4 :c7] :type :question}
-   :c9   {:question "Does the mouth have teeth or not [generic teeth or no teeth picture]" :children {:c16 {:answer "No teeth" :image ""} :c18 {:answer "Has teeth" :image ""}} :path [:c1 :c2 :c3 :c4 :c7] :type :question}
+   :c8   {:question "Does the mouth have teeth or not [generic teeth or no teeth picture] - same page as for Q7" :children {:c10 {:answer "No teeth" :image "C8_C10_NoTeeth.jpg"} :ce4 {:answer "Has teeth" :image "C8_CE4_Teeth.jpg"}} :path [:c1 :c2 :c3 :c4 :c7] :type :question}
+   :c9   {:question "Does the mouth have teeth or not [generic teeth or no teeth picture]" :children {:c16 {:answer "No teeth" :image "C9_C16_NoTeeth.jpg"} :c18 {:answer "Has teeth" :image "C9_C18_Teeth.jpg"}} :path [:c1 :c2 :c3 :c4 :c7] :type :question}
    :c10  {:question "Does the mouth have an operculum? [Draw generic picture of Pomatias elegans with operculum and snail with no operculum]" :children {:ce5 {:answer "Has operculum" :image ""} :c11 {:answer "No operculum" :image ""}} :path [:c1 :c2 :c3 :c4 :c7 :c8] :type :question}
    :c11  {:question "Does the shell have few flattened whorls or not? [picture of Oxyloma elegans and a generic picture of a mix of Cochlicopidae / Enidae / Cochlicellidae]" :children {:ce6 {:answer "Few flattened whorls" :image ""} :c12 {:answer "No whorls" :image ""}} :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10] :type :question}
    :c12  {:question "Does the mouth have a thickened lip or not? [picture of thick lip of Ena montana vs Cochlicopidae / Cochlicellidae small lip]" :children {:c14 {:answer "No thick lip" :image ""} :c13 {:answer "Thick lip" :image ""}} :path [:c1 :c2 :c3 :c4 :c7 :c8 :c10 :c11] :type :question}
@@ -81,4 +82,5 @@
    :ce19 {:answer "Cluster of PUPILLIDAE family (both 2 species), Lauria sempronii (LAURIIDAE), and VERTIGINIDAE (6 species, not whole family - CHECK WHICH WITH TOM)" :image "" :path [:c1 :c2 :c3 :c4 :c7 :c9 :c16 :c17] :endpoints [] :type :cluster}
    :ce20 {:answer "CLAUSILIIDAE" :image "" :path [:c1 :c2 :c3 :c4 :c5] :endpoints [] :type :family}
    })
+
 
