@@ -7,6 +7,7 @@
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.snails :refer [snails-component]]
             [snailfinder.family-view :refer [family-view]]
+            [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
 
 (enable-console-print!)
@@ -40,6 +41,8 @@
         (dom/a #js{:href "#/family/ce9"} "Family Page")
         (dom/br nil)
         (dom/a #js{:href "#/snails"} "Snails")
+               (dom/a #js {:href      "#/map"
+                           :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")
         ))))
 
 
@@ -65,6 +68,7 @@
             :snail (om/build snail-view cursor)
             :snails (om/build snails-component cursor)
             :family (om/build family-view cursor)
+            :map (om/build map-view cursor)
             (om/build home-component cursor))))))))
 
 (om/root
