@@ -30,14 +30,17 @@
   [cursor _]
   (om/component
     (dom/div #js {:className "mdl-grid"}
-      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-        (dom/h2 nil "Find your snail")
-        (dom/a #js {:href      "#/snail-key/c1"
-                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-        (dom/br nil)
-        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")))))
+             (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
+                      (dom/h2 nil "Find your snail")
+                      (dom/a #js {:href      "#/snail-key/c1"
+                                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
+                      (dom/br nil)
+                      (dom/a #js{:href "#/snail/ae2"} "Snail Page")
+                      (dom/br nil)
+                      (dom/a #js{:href "#/family/ce9"} "Family Page")
+                      (dom/br nil)
+                      (dom/a #js {:href      "#/map"
+                                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Map")))))
 
 
 (defn about-component
