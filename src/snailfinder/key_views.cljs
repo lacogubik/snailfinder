@@ -13,10 +13,10 @@
             [:div.mdl-cell.mdl-cell--5-col
              [:p.text-center
               [:strong (:text child)]]]
-            [:div.mdl-cell.mdl-cell--5-col.mdl-typography--text-center
+            [:div.mdl-cell.mdl-cell--2-col-phone.mdl-typography--text-center
              [:a {:href (str "#/snail-key/" (name (first child)))}
               [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
-              [:button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored (get-in child [1 :answer])]]]))))
+              [:span.button-primary (get-in child [1 :answer])]]]))))
 
 
 (defn breadcrumbs-component
@@ -40,7 +40,7 @@
   (om/component
     (html [:div.mdl-grid
            [:div.mdl-cell.mdl-cell--12-col
-            [:h4 (:question cursor)]]])))
+            [:p.key__question (:question cursor)]]])))
 
 
 (defn snail-key-view
