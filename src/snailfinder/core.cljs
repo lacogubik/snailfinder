@@ -29,22 +29,22 @@
 (defn home-component
   [cursor _]
   (om/component
-    (dom/div #js {:className "mdl-grid"}
-      (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-        (dom/h2 nil "Find your snail")
-        (dom/a #js {:href      "#/snail-key/c1"
-                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-        (dom/br nil)
-        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
-        (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")))
     (html
-      [:div
-       [:a {:on-click #(do
-                         (om/update! cursor [:current :page] :snail)
-                         (om/update! cursor [:current :answer] :ae2))}] "Snail Page"])
-
-    ))
+      [:div.mdl-grid
+       [:div.mdl-cell.mdl-cell--12-col
+        [:h2 "Find your snail"]
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+         {:href "#/snail-key/c1"} "Let's get started!"]
+        [:br]
+        [:a {:href "#/snail/ae2"
+             :on-click #(do
+                          (om/update! cursor [:current :page] :snail)
+                          (om/update! cursor [:current :answer] :ae2))} "Snail Page"]
+        [:br]
+        [:a {:href "#/family/ce9"
+             :on-click #(do
+                          (om/update! cursor [:current :page] :family)
+                          (om/update! cursor [:current :answer] :ce9))} "Family Page"]]])))
 
 
 (defn about-component
