@@ -18,6 +18,13 @@ span.snail-detail-title {
     width: 100%;
 }
 
+.key__question {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
 @media screen and (min-width: 50rem) {
     .result-list__item {
         float: left;
