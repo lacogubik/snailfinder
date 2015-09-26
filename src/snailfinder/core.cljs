@@ -1,10 +1,12 @@
 (ns ^:figwheel-always snailfinder.core
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [snailfinder.data :refer [app-state]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
-            [snailfinder.family-view :refer [family-view]]))
+            [snailfinder.family-view :refer [family-view]]
+            [snailfinder.routes :as routes]))
 
 (enable-console-print!)
 
@@ -19,10 +21,8 @@
       (dom/div #js{:className "mdl-layout__drawer-button"}
         (dom/i #js{:className "material-icons"} "menu"))
       (dom/div #js{:className "mdl-layout__header-row"}
-        (dom/span #js{:className "mdl-layout-title"
-                      :onClick   #(do
-                                   (om/update! cursor [:current :page] :home)
-                                   (om/update! cursor [:current :question] :c1))} "Snail Finder")))))
+        (dom/a #js{:className "mdl-layout-title"
+                   :href      "#/"} "Snail Finder")))))
 
 
 (defn home-component
@@ -30,18 +30,19 @@
   (om/component
     (dom/div #js {:className "mdl-grid"}
       (dom/div #js {:className "mdl-cell mdl-cell--12-col"}
-      (dom/h2 nil "Find your snail")
-      (dom/a #js {:onClick #(om/update! cursor [:current :page] :snail-key)
-                  :href "#"
-                  :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
-      (dom/br nil)
-      (dom/a #js{:onClick #(do
-                            (om/update! cursor [:current :page] :snail)
-                            (om/update! cursor [:current :question] :ae2))} "Snail Page")
-      (dom/br nil)
-      (dom/a #js{:onClick #(do
-                            (om/update! cursor [:current :page] :family)
-                            (om/update! cursor [:current :question] :ce9))} "Family Page")))))
+        (dom/h2 nil "Find your snail")
+        (dom/a #js {:href      "#/snail-key/c1"
+                    :className "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"} "Let's get started!")
+        (dom/br nil)
+        (dom/a #js{:href "#/snail/ae2"} "Snail Page")
+        (dom/br nil)
+        (dom/a #js{:href "#/family/ce9"} "Family Page")))))
+
+
+(defn about-component
+  [cursor owner]
+  (om/component
+    (html [:div [:h1 "About"]])))
 
 
 (defn main-component
@@ -52,6 +53,7 @@
       (dom/div #js{:className ""}
         (dom/div #js{:className ""}
           (case (get-in cursor [:current :page])
+            :about (om/build about-component cursor)
             :home (om/build home-component cursor)
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
