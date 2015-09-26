@@ -7,7 +7,7 @@
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.snails :refer [snails-component]]
-            [snailfinder.family-view :refer [family-view]]
+            [snailfinder.group-view :refer [group-view]]
             [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
 
@@ -38,7 +38,8 @@
         [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
          {:href "#/snail-key/c1"} "Let's get started!"]
         [:br]
-        [:a {:href "#/snail/s1"
+        [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+         {:href "#/snail/s1"
              :on-click #(do
                           (om/update! cursor [:current :page] :snail)
                           (om/update! cursor [:current :answer] :s1))} "Snail Page"]
@@ -46,12 +47,15 @@
         [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored 
          {:href "#/family/ce9"
              :on-click #(do
-                          (om/update! cursor [:current :page] :family)
-                          (om/update! cursor [:current :answer] :ce9))} "Family Page"]
+                          (om/update! cursor [:current :page] :group)
+                          (om/update! cursor [:current :answer] :ce9))} "Group Page"]
       [:br]
-      [:a {:href "#/snails"} "Snails"]]]
+      [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+       {:href "#/snails"} "Snails"]
       [:br]
-      [:a {:href "#/map"} "Map"]]])))
+      [:a.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored
+       {:href "#/map"} "Map"]]]
+      )))
 
 
 (defn about-component
@@ -75,7 +79,7 @@
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
             :snails (om/build snails-component cursor)
-            :family (om/build family-view cursor)
+            :group (om/build group-view cursor)
             :map (om/build map-view cursor)
             (om/build home-component cursor))))))))
 

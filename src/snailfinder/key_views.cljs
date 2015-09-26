@@ -15,7 +15,7 @@
               [:strong (:text child)]]]
             [:div.mdl-cell.mdl-cell--5-col.mdl-typography--text-center
              [:a {:href (str "#/snail-key/" (name (first child)))}
-              [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
+              [:img.img-responsive {:src (str "images/endpoint/" (get-in child [1 :image]))}]
               [:button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored (get-in child [1 :answer])]]]))))
 
 
