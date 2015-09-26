@@ -1,10 +1,12 @@
 (ns ^:figwheel-always snailfinder.core
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
+            [sablono.core :as html :refer-macros [html]]
             [snailfinder.data :refer [app-state]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
-            [snailfinder.family-view :refer [family-view]]))
+            [snailfinder.family-view :refer [family-view]]
+            [snailfinder.routes :as routes]))
 
 (enable-console-print!)
 
@@ -44,6 +46,12 @@
                             (om/update! cursor [:current :question] :ce9))} "Family Page")))))
 
 
+(defn about-component
+  [cursor owner]
+  (om/component
+    (html [:div [:h1 "About"]])))
+
+
 (defn main-component
   [cursor _]
   (om/component
@@ -52,6 +60,7 @@
       (dom/div #js{:className ""}
         (dom/div #js{:className ""}
           (case (get-in cursor [:current :page])
+            :about (om/build about-component cursor)
             :home (om/build home-component cursor)
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
