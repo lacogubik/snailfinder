@@ -38,4 +38,4 @@
                                                             (om/update! app [:snails :query] (.. e -target -value)))}]
                  [:label.mdl-textfield__label "Search"]]
                 (into [:div] (map (fn [[key snail]]
-                                    [:div [:img {:src (str "https://placeholdit.imgix.net/~text?txtsize=33&w=350&h=350&txt=" (:name snail))}] [:div (str (:name snail))]]) result))]])))))
+                                    [:div.result-list__item [:img {:src (str "https://placeholdit.imgix.net/~text?txtsize=33&w=350&h=350&txt=" (:name snail))}] [:div (str (:name snail))]]) result))]])))))

@@ -1,8 +1,19 @@
 body {
-    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'sans-serif';
+    font-size: 100%;
 }
 
 .img-responsive {
     width: 100%;
 }
 
+.result-list__item {
+    width: 100%;
+}
+
+@media screen and (min-width: 50rem) {
+    .result-list__item {
+        float: left;
+        width: 50%;
+    }
+}
