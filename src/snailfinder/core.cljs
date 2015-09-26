@@ -3,6 +3,7 @@
             [om.dom :as dom :include-macros true]
             [sablono.core :as html :refer-macros [html]]
             [snailfinder.data :refer [app-state]]
+            [snailfinder.key :refer [snail-key-flat]]
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.family-view :refer [family-view]]
@@ -36,7 +37,14 @@
         (dom/br nil)
         (dom/a #js{:href "#/snail/ae2"} "Snail Page")
         (dom/br nil)
-        (dom/a #js{:href "#/family/ce9"} "Family Page")))))
+        (dom/a #js{:href "#/family/ce9"} "Family Page")))
+    (html
+      [:div
+       [:a {:on-click #(do
+                         (om/update! cursor [:current :page] :snail)
+                         (om/update! cursor [:current :answer] :ae2))}] "Snail Page"])
+
+    ))
 
 
 (defn about-component
