@@ -14,9 +14,25 @@
              [:p.text-center
               [:strong (:text child)]]]
             [:div.mdl-cell.mdl-cell--5-col.mdl-typography--text-center
-             [:a {:on-click #(om/update! (app-state-cursor) [:current :question] (first child))}
+             [:a {:href (str "#/snail-key/" (name (first child)))}
               [:img.img-responsive {:src (str "images/key/" (get-in child [1 :image]))}]
               [:button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored (get-in child [1 :answer])]]]))))
+
+
+(defn breadcrumbs-component
+  [{:keys [path] :as q-data} _]
+  (om/component
+    (html [:div (into [:div] (interpose [:span " > "] (map (fn [path-key]
+                               (let [key-name (name path-key)]
+                                 [:a {:href (str "#/snail-key/" key-name)} key-name])) path)))])))
+
+
+(defn back-component
+  [{:keys [path] :as q-data} _]
+  (om/component
+    (html (if-let [last-path-key (last path)]
+            [:a {:href (str "#/snail-key/" (name last-path-key))} "Previous question"]
+            [:div]))))
 
 
 (defn key-question
@@ -35,6 +51,8 @@
       (html [:div
              (if (= :question (:type q-data))
                [:div
+                (om/build back-component q-data)
+                (om/build breadcrumbs-component q-data)
                 (om/build key-question q-data)
                 [:div.mdl-grid (for [answer (:children q-data)]
                                        (om/build key-answer answer))]]
