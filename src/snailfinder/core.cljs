@@ -6,6 +6,7 @@
             [snailfinder.key-views :refer [snail-key-view]]
             [snailfinder.snail-view :refer [snail-view]]
             [snailfinder.family-view :refer [family-view]]
+            [snailfinder.map :refer [map-view]]
             [snailfinder.routes :as routes]))
 
 (enable-console-print!)
@@ -58,6 +59,7 @@
             :snail-key (om/build snail-key-view cursor)
             :snail (om/build snail-view cursor)
             :family (om/build family-view cursor)
+            :map (om/build map-view cursor)
             (om/build home-component cursor)))))))
 
 (om/root

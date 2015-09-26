@@ -26,6 +26,9 @@
 (defroute snail-key-default-path "/snail-key" []
   (set-current-page! :snail-key))
 
+(defroute snail-key-default-path "/map" []
+  (set-current-page! :map))
+
 
 (defroute snail-key-path "/snail-key/:key" [key]
   (set-current-page! :snail-key)
